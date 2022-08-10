@@ -16,7 +16,7 @@ import Carousel from "./carousel.svelte";
 <style>
   main {
     width: 100%;
-    height: 1200px;
+    height: 900px;
     background-image: url("/images/group.jpg");
     background-position: center;
     background-size: cover;

@@ -26,7 +26,7 @@
         alt="BBL Hero"
       />
     </div>
-    <ul in:fade={{ delay: 500, duration: 500 }} class="hero__socials">
+    <ul in:fade={{ delay: 600, duration: 500 }} class="hero__socials">
       <li class="hero__socials-item">
         <a href="/"
           ><img
@@ -66,7 +66,7 @@
   /* your styles go here */
   main {
     width: 100%;
-    height: calc(90vh);
+    height: calc(90vh - 30px);
     min-height: 800px;
     background-image: url("images/CLEO.jpg");
     background-size: cover;
@@ -99,6 +99,9 @@
     width: 300px;
     height: auto;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .hero__socials {
     background-color: white;

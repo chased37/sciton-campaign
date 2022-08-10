@@ -7,13 +7,37 @@
   import Testimonial from "./components/testimonial.svelte";
   import Map from "./components/map.svelte";
   import Newsletter from "./components/newsletter.svelte";
-import Divider from "./components/divider.svelte";
+  import Divider from "./components/divider.svelte";
+
+  import { fade } from "svelte/transition";
+  import { onMount } from "svelte";
+
+  let y;
+
+  let animate = false;
+  onMount(() => {
+    animate = true;
+  });
+
+  import * as animateScroll from "svelte-scrollto";
 </script>
 
+<Header duration="150ms" offset={50} tolerance={5} />
 <main>
-  <Header />
   <Hero />
-  <Bbl />
+  {#if animate}
+    {#if y < 50}
+      <div in:fade={{ delay: 200, duration: 100 }} id="bbl-anchor">
+        <button
+          on:click={() =>
+            animateScroll.scrollTo({ element: "#bbl", duration: 700 })}
+          >&darr;</button
+        >
+      </div>
+    {/if}
+  {/if}
+
+  <Bbl componentId="bbl" />
   <Video />
   <Compare />
   <Map />
@@ -22,5 +46,33 @@ import Divider from "./components/divider.svelte";
   <Newsletter />
 </main>
 
+<svelte:window bind:scrollY={y} />
+
 <style>
+  main {
+    position: relative;
+  }
+  #bbl-anchor {
+    position: fixed;
+    width: 100%;
+    top: 75%;
+    display: flex;
+    justify-content: center;
+  }
+  #bbl-anchor button {
+    margin: auto;
+    background-color: none;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 40px;
+    color: var(--offWhite);
+    transition: transform 400ms ease-in-out;
+    font-family: var(--ivyMode);
+  }
+  #bbl-anchor button:hover {
+    cursor: pointer;
+    transform: translateY(15%);
+    transition: transform 400ms ease-in-out;
+  }
 </style>

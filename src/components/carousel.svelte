@@ -6,14 +6,16 @@
   let arrow = "/images/chevron-dark.png";
 
   export let slides;
-  export let speed = 500;
+  export let speed = 800;
 
-  const rotateLeft = (e) => {
+  const rotateCarouselLeft = (e) => {
     const transitioningSlide = slides[slides.length - 1];
-    console.log(transitioningSlide.id);
     // @ts-ignore
     document.getElementById(transitioningSlide.id).style.opacity = 0;
-    slides = [slides[slides.length - 1], ...slides.slice(0, slides.length - 1)];
+    slides = [
+      slides[slides.length - 1],
+      ...slides.slice(0, slides.length - 1),
+    ];
     // @ts-ignore
     setTimeout(
       // @ts-ignore
@@ -21,11 +23,14 @@
       speed
     );
   };
-  const rotateRight = (e) => {
+  const rotateCarouselRight = (e) => {
     const transitioningSlide = slides[0];
     // @ts-ignore
     document.getElementById(transitioningSlide.id).style.opacity = 0;
-    slides = [...slides.slice(1, slides.length), slides[0]];
+    slides = [
+      ...slides.slice(1, slides.length),
+      slides[0],
+    ];
     // @ts-ignore
     setTimeout(
       // @ts-ignore
@@ -55,10 +60,10 @@
     {/each}
   </div>
   <!-- svelte-ignore a11y-missing-attribute -->
-  <a on:click={rotateLeft} class="carousel__button carousel__button--left"
+  <a on:click={rotateCarouselLeft} class="carousel__button carousel__button--left"
     ><img src={arrow} /></a
   >
-  <a on:click={rotateRight} class="carousel__button carousel__button--right"
+  <a on:click={rotateCarouselRight} class="carousel__button carousel__button--right"
     ><img src={arrow} /></a
   >
 </div>
@@ -75,6 +80,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
+    overflow: hidden;
+    height: auto;
     align-items: center;
   }
   .carousel__slide {
@@ -89,6 +96,7 @@
   }
   .carousel__layout {
     width: 80vw;
+    height: auto;
   }
   .carousel__button {
     position: absolute;
@@ -96,7 +104,7 @@
   }
   .carousel__button:hover {
     filter: brightness(90%);
-    transition: all ease .2s;
+    transition: all ease 0.2s;
     cursor: pointer;
   }
   .carousel__button--right {
@@ -118,6 +126,7 @@
     font-size: 30px;
     text-align: center;
     line-height: 1.3;
+    padding-bottom: 1rem;
     margin: auto;
   }
   .carousel__slide-subtext {
@@ -129,10 +138,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 150px;
     border-bottom: 1px solid var(--tertiary);
     width: 80%;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 1rem auto;
   }
   .carousel__c-icon img {
     transform: rotate(180deg);

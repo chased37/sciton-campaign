@@ -27,6 +27,7 @@ body {
   line-height: 1;
   font-style: normal;
   background-color: var(--offWhite);
+  overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
