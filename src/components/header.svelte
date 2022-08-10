@@ -32,6 +32,7 @@
         grid-template-columns: 1fr 1fr;
         position: fixed;
         background-color: var(--tertiary);
+        z-index: 1;
     }
     .header__nav {
         display: grid;

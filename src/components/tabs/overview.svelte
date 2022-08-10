@@ -19,7 +19,7 @@
 
 <style>
     main {
-        height: 650px;
+        height: 800px;
         width: 90%;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -71,6 +71,7 @@
         height: 90%;
         background-image: url("images/roxanne.jpg");
         margin: auto;
+        background-repeat: no-repeat;
         background-size: 220%;
         border-radius: 28px;
         background-position: center;

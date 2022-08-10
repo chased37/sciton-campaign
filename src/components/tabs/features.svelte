@@ -19,7 +19,7 @@
 
 <style>
     main {
-        height: 650px;
+        height: 800px;
         width: 90%;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -35,7 +35,7 @@
     .features__heading, .features__desc {
         width: 80%;
         text-align: left;
-        padding-bottom: 3rem;
+        padding-bottom: 3rem; 
     }
     .features__heading {
         font-family: var(--ivyMode);
@@ -70,6 +70,7 @@
         width: 90%;
         height: 90%;
         background-image: url("images/roxanne.jpg");
+        background-repeat: no-repeat;
         margin: auto;
         background-size: 220%;
         border-radius: 28px;

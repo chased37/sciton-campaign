@@ -26,6 +26,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   font-style: normal;
+  background-color: var(--offWhite);
 }
 ol, ul {
 	list-style: none;
@@ -50,4 +51,5 @@ table {
 	--secondary: #bfa888;
 	--primary: #151515;
 	--tertiary: white;
+	--offWhite: #FAFAFA;
 }

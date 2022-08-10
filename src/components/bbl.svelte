@@ -33,8 +33,10 @@
 
 <style>
     main {
-        height: 90vh;
-        min-height: 800px;
+        height: auto;
+        min-height: 1000px;
         width: 100%;
+        padding-bottom: 3rem;
+        overflow-x: hidden;
     }
 </style>
