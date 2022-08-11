@@ -1,42 +1,40 @@
 <script>
+  // @ts-nocheck
+  import { fade, blur, draw } from "svelte/transition";
+
   import { flip } from "svelte/animate";
-  import { fly, fade } from "svelte/transition";
 
   let src = "/images/quote.png";
   let arrow = "/images/chevron-dark.png";
 
   export let slides;
-  export let speed = 800;
+  export let speed;
+  let animate = false;
 
   const rotateCarouselLeft = (e) => {
     const transitioningSlide = slides[slides.length - 1];
-    // @ts-ignore
-    document.getElementById(transitioningSlide.id).style.opacity = 0;
-    slides = [
-      slides[slides.length - 1],
-      ...slides.slice(0, slides.length - 1),
-    ];
-    // @ts-ignore
-    setTimeout(
-      // @ts-ignore
-      () => (document.getElementById(transitioningSlide.id).style.opacity = 1),
-      speed
-    );
+    // document.getElementById(transitioningSlide.id).style.opacity = 0;
+    slides = [slides[slides.length - 1], ...slides.slice(0, slides.length - 1)];
+    // setTimeout(
+    //   () => (document.getElementById(transitioningSlide.id).style.opacity = 1),
+    //   speed
+    // );
   };
   const rotateCarouselRight = (e) => {
     const transitioningSlide = slides[0];
-    // @ts-ignore
-    document.getElementById(transitioningSlide.id).style.opacity = 0;
-    slides = [
-      ...slides.slice(1, slides.length),
-      slides[0],
-    ];
-    // @ts-ignore
-    setTimeout(
-      // @ts-ignore
-      () => (document.getElementById(transitioningSlide.id).style.opacity = 1),
-      speed
-    );
+    // document.getElementById(transitioningSlide.id).className =
+    //   "transitioning__slide";
+
+    slides = [...slides.slice(1, slides.length), slides[0]];
+    // const revertOpacity = () => {
+    //   document.getElementById(transitioningSlide.id).className =
+    //     "carousel__slide";
+    //   console.log(document.getElementById(transitioningSlide.id).className);
+    // };
+    // setTimeout(function () {
+    //   revertOpacity();
+    // }, speed);
+    // console.log(document.getElementById(transitioningSlide.id).className);
   };
 </script>
 
@@ -45,7 +43,7 @@
   <div class="carousel__slides">
     {#each slides as slide (slide.id)}
       <div
-        animate:flip={{ duration: speed }}
+        animate:blur={{ duration: speed }}
         id={slide.id}
         class="carousel__slide"
       >
@@ -60,11 +58,13 @@
     {/each}
   </div>
   <!-- svelte-ignore a11y-missing-attribute -->
-  <a on:click={rotateCarouselLeft} class="carousel__button carousel__button--left"
-    ><img src={arrow} /></a
+  <a
+    on:click={rotateCarouselLeft}
+    class="carousel__button carousel__button--left"><img src={arrow} /></a
   >
-  <a on:click={rotateCarouselRight} class="carousel__button carousel__button--right"
-    ><img src={arrow} /></a
+  <a
+    on:click={rotateCarouselRight}
+    class="carousel__button carousel__button--right"><img src={arrow} /></a
   >
 </div>
 
@@ -87,6 +87,7 @@
   .carousel__slide {
     height: 500px;
     margin: auto;
+    display: inline-block;
     margin: 0 50%;
     backdrop-filter: blur(4px);
     background: transparent

@@ -61,7 +61,7 @@
     width: 80%;
   }
   .compare__slide-subtext {
-    color: rgba(0, 0, 0, 0.413);
+    color: var(--bodyText);
   }
   .compare__slide-text {
     font-size: 30px;

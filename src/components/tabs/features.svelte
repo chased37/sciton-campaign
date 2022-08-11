@@ -1,5 +1,7 @@
 <script>
   let src = "images/roxanne.jpg";
+
+  import * as animateScroll from "svelte-scrollto";
 </script>
 
 <main>
@@ -16,7 +18,12 @@
       no downtime.
     </p>
     <div class="features__c-button">
-      <a class="features__button" href="/">FIND LOCAL PROVIDER</a>
+      <button
+        class="features__button"
+        on:click={() =>
+          animateScroll.scrollTo({ element: "#map", duration: 700 })}
+        >FIND LOCAL PROVIDER</button
+      >
     </div>
   </div>
   <div class="features__image">
@@ -44,6 +51,7 @@
     width: 80%;
     text-align: left;
     padding-bottom: 3rem;
+    line-height: 1.5;
   }
   .features__heading {
     font-family: var(--ivyMode);
@@ -52,7 +60,7 @@
   }
   .features__desc {
     font-family: var(--adrianna);
-    color: var(--primary);
+    color: var(--bodyText);
     font-size: 18px;
   }
   .features__c-button {
@@ -68,6 +76,9 @@
     text-decoration: none;
     font-family: var(--adrianna);
     color: var(--tertiary);
+  }
+  .features__button:hover {
+    cursor: pointer;
   }
   .features__image {
     display: flex;

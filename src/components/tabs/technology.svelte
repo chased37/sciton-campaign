@@ -1,5 +1,7 @@
 <script>
   let src = "images/roxanne.jpg";
+
+  import * as animateScroll from "svelte-scrollto";
 </script>
 
 <main>
@@ -41,7 +43,12 @@
       individual wavelength.
     </p>
     <div class="technology__c-button">
-      <a class="technology__button" href="/">FIND LOCAL PROVIDER</a>
+      <button
+        class="technology__button"
+        on:click={() =>
+          animateScroll.scrollTo({ element: "#map", duration: 700 })}
+        >FIND LOCAL PROVIDER</button
+      >
     </div>
   </div>
   <div class="technology__image">
@@ -51,10 +58,11 @@
 
 <style>
   main {
-    height: 800px;
+    min-height: 800px;
     width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-bottom: 3rem;
     margin: auto;
   }
   .technology__text {
@@ -73,12 +81,13 @@
     font-family: var(--ivyMode);
     color: var(--secondary);
     font-size: 66px;
-    padding-bottom: 3rem;
+    padding: 3rem 0;
   }
   .technology__desc {
     font-family: var(--adrianna);
-    color: var(--primary);
-    font-size: 18px;
+    color: var(--bodyText);
+    font-size: 15px;
+    line-height: 1.5;
   }
   .technology__c-button {
     width: 80%;
@@ -94,6 +103,9 @@
     text-decoration: none;
     font-family: var(--adrianna);
     color: var(--tertiary);
+  }
+  .technology__button:hover {
+    cursor: pointer;
   }
   .technology__image {
     display: flex;
@@ -113,8 +125,9 @@
   .technology__list {
     list-style: disc;
     width: 70%;
+    line-height: 1.5;
     font-family: var(--adrianna);
-    color: var(--primary);
+    color: var(--bodyText);
     padding: 1.3rem 0;
     margin-left: 1rem;
   }
@@ -124,7 +137,7 @@
       grid-template-columns: 1fr;
     }
     .technology__image {
-        display: none;
+      display: none;
     }
   }
 </style>

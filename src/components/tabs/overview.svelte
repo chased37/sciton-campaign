@@ -1,5 +1,7 @@
 <script>
   let src = "images/roxanne.jpg";
+
+  import * as animateScroll from "svelte-scrollto";
 </script>
 
 <main>
@@ -12,7 +14,13 @@
       forever results from head to toe.
     </p>
     <div class="overview__c-button">
-      <a class="overview__button" href="/">FIND LOCAL PROVIDER</a>
+      <button
+        type="button"
+        class="overview__button"
+        on:click={() =>
+          animateScroll.scrollTo({ element: "#map", duration: 700 })}
+        >FIND LOCAL PROVIDER</button
+      >
     </div>
   </div>
   <div class="overview__image">
@@ -39,6 +47,7 @@
   .overview__desc {
     width: 80%;
     text-align: left;
+    line-height: 1.5;
     padding-bottom: 3rem;
   }
   .overview__heading {
@@ -48,7 +57,7 @@
   }
   .overview__desc {
     font-family: var(--adrianna);
-    color: var(--primary);
+    color: var(--bodyText);
     font-size: 18px;
   }
   .overview__c-button {
@@ -64,6 +73,9 @@
     text-decoration: none;
     font-family: var(--adrianna);
     color: var(--tertiary);
+  }
+  .overview__button:hover {
+    cursor: pointer;
   }
   .overview__image {
     display: flex;

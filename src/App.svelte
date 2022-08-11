@@ -27,7 +27,7 @@
   <Hero />
   {#if animate}
     {#if y < 50}
-      <div in:fade={{ delay: 200, duration: 100 }} id="bbl-anchor">
+      <div in:fade={{ delay: 1000, duration: 300 }} id="bbl-anchor">
         <button
           on:click={() =>
             animateScroll.scrollTo({ element: "#bbl", duration: 700 })}
@@ -65,8 +65,8 @@
     outline: none;
     border: none;
     background: none;
-    font-size: 40px;
-    color: var(--offWhite);
+    font-size: 35px;
+    color: rgba(255, 255, 255, 0.478);
     transition: transform 400ms ease-in-out;
     font-family: var(--ivyMode);
   }

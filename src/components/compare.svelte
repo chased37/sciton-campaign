@@ -1,8 +1,13 @@
 <script>
   // @ts-nocheck
 
+  import { fly } from "svelte/transition";
+  // @ts-nocheck
+  import IntersectionObserver from "svelte-intersection-observer";
   import CompareTabs from "./compareTabs.svelte";
   import ImageCompare from "svelte-image-compare";
+
+  let node;
   const slides = [
     {
       id: "one",
@@ -34,33 +39,58 @@
   ];
 </script>
 
-<main>
-  {#each slides as slide (slide.id)}
-    <div id={slide.id} class="compare__slide">
-      <div class="compare__img-layout">
-        <ImageCompare
-          before={slide.backgroundImage}
-          after={slide.foregroundImage}
-          contain={true}
-          overlay={false}
-        />
-      </div>
-      <p class="compare__slide-subtext">{slide.subtext}</p>
-      <p class="compare__slide-text">{slide.text}</p>
-      <p class="compare__slide-blurb">{slide.blurb}</p>
-    </div>
-  {/each}
-</main>
+<IntersectionObserver once element={node} let:intersecting>
+  {#if intersecting}
+    <h3
+      transition:fly={{ y: 50, delay: 250, duration: 400 }}
+      class="compare__heading"
+    >
+      Before and After
+    </h3>
+  {/if}
+  <main bind:this={node}>
+    {#each slides as slide (slide.id)}
+      {#if intersecting}
+        <div
+          transition:fly={{ y: 10, delay: 400, duration: 500 }}
+          id={slide.id}
+          class="compare__slide"
+        >
+          <div class="compare__img-layout">
+            <ImageCompare
+              before={slide.backgroundImage}
+              after={slide.foregroundImage}
+              contain={true}
+              overlay={false}
+            />
+          </div>
+          <p class="compare__slide-subtext">{slide.subtext}</p>
+          <p class="compare__slide-text">{slide.text}</p>
+          <p class="compare__slide-blurb">{slide.blurb}</p>
+        </div>
+      {/if}
+    {/each}
+  </main>
+</IntersectionObserver>
 
 <style>
   main {
     width: 100%;
-    min-height: 900px;
+    min-height: 700px;
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
+  }
+  .compare__heading {
+    width: 100%;
+    height: auto;
+    font-family: var(--ivyMode);
+    color: var(--secondary);
+    font-size: 66px;
+    text-align: center;
+    padding-top: 4rem;
   }
   .compare__slide {
     height: 600px;

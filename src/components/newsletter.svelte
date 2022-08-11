@@ -119,6 +119,7 @@
     font-size: 20px;
     color: var(--secondary);
     font-family: var(--adrianna);
+    padding-left: 1rem;
   }
   .newsletter__input:focus {
     outline: none;
