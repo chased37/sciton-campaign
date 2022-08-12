@@ -11,10 +11,13 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
     "svelte": "^3.49.0",
+    "svelte-scrollto": "^0.2.0",
     "vite": "^3.0.0"
   },
   "dependencies": {
     "jsonp": "^0.2.1",
-    "store-locator": "^1.0.9"
+    "store-locator": "^1.0.9",
+    "svelte-image-compare": "^1.1.1",
+    "svelte-intersection-observer": "^0.10.0"
   }
 }

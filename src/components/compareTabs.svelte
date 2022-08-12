@@ -1,84 +1,83 @@
 <script>
-    export let items = [];
-    export let activeTabValue = 1;
-    let src = "images/compare-hero-2.png"
-  
-    const handleClick = tabValue => () => (activeTabValue = tabValue);
-</script>
-  
+  // @ts-nocheck
+  import { flip } from "svelte/animate";
+  import ImageCompare from "svelte-image-compare";
 
-<div class="compare__header">
-    <div class="compare__logo">
-        <img {src} class="compare__image" alt="compare HERO" />
-    </div>
-    <ul class="compare__nav">
-        {#each items as item}
-            <li class={activeTabValue === item.value ? 'active' : ''}>
-                <span on:click={handleClick(item.value)}>{item.label}</span>
-            </li>
-        {/each}
-    </ul>
+  export let slides;
+</script>
+
+<!-- svelte-ignore a11y-missing-attribute -->
+<div class="compare">
+    {#each slides as slide (slide.id)}
+      <div
+        id={slide.id}
+        class="compare__slide"
+      >
+        <div class="compare__layout">
+          <div class="compare__img-layout">
+            <ImageCompare
+              before={slide.backgroundImage}
+              after={slide.foregroundImage}
+              contain={true}
+              overlay={false}
+            />
+          </div>
+          <p class="compare__slide-subtext">{slide.subtext}</p>
+          <p class="compare__slide-text">{slide.text}</p>
+          <p class="compare__slide-blurb">{slide.blurb}</p>
+        </div>
+      </div>
+    {/each}
 </div>
 
-
-
-  {#each items as item}
-      {#if activeTabValue == item.value}
-      <div class="box">
-          <svelte:component this={item.component}/>
-      </div>
-      {/if}
-  {/each}
-
-
-
-
-  <style>
-    .compare__nav {
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-      width: 100%;
-      height: 150px;
-    }
-      li {
-          margin-bottom: -1px;
-      }
-  
-    span {
-      border: 1px solid transparent;
-      border-top-left-radius: 0.25rem;
-      border-top-right-radius: 0.25rem;
-      display: block;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-    }
-    .compare__header {
-        width: 100%;
-        height: 100px;
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-    }
-    .compare__logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .compare__image {
-        width: 200px;
-        height: auto;
-    }
-    .compare__nav {
-        display: flex;
-        align-items: center;
-        font-family: var(--adrianna);
-        font-size: 22px;
-    }
-    .compare__nav li {
-        margin-right: 20px;
-    }
-    li.active > span {
-    color: #bfa888;
-    border-bottom: solid 1px #bfa888;
+<style>
+  .compare {
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+    position: relative;
   }
-  </style>
+  .compare__img-layout {
+    width: 100%;
+    border-radius: 10px;
+    height: 450px;
+    position: relative;
+  }
+
+  .compare__slide {
+    height: 600px;
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
+    width: 500px;
+  }
+  .compare__layout {
+    width: auto;
+    height: 100%;
+  }
+  .compare__slide-text,
+  .compare__slide-subtext,
+  .compare__slide-blurb {
+    font-family: var(--adrianna);
+    width: 80%;
+  }
+  .compare__slide-subtext {
+    color: var(--bodyText);
+  }
+  .compare__slide-text {
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.3;
+    margin: auto;
+    color: var(--primary);
+  }
+  .compare__slide-subtext {
+    font-size: 13px;
+    text-align: center;
+    margin: auto;
+  }
+  .compare__slide-blurb {
+    color: var(--secondary);
+    text-align: center;
+    margin: auto;
+  }
+</style>
