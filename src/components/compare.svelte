@@ -95,6 +95,7 @@
     border-radius: 10px;
     margin: auto;
     width: 450px;
+    overflow: hidden;
   }
   .compare__img-layout {
     width: 100%;
@@ -128,5 +129,13 @@
     color: var(--secondary);
     text-align: center;
     margin: auto;
+  }
+  @media screen and (max-width: 1450px) {
+    main {
+      grid-template-columns: 1fr 1fr;
+    }
+    .compare__slide:nth-child(2) {
+      display: none;
+    }
   }
 </style>
