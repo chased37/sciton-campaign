@@ -1,5 +1,7 @@
 <script>
-  import { fly } from "svelte/transition";
+  // @ts-nocheck
+
+  import { fly, fade } from "svelte/transition";
   import IntersectionObserver from "svelte-intersection-observer";
   let src = "/images/alissa.jpg";
 
@@ -10,16 +12,30 @@
   <main bind:this={node}>
     <div class="video__heading">
       {#if intersecting}
-        <h2 transition:fly={{ y: 50, delay: 250, duration: 400 }} class="video__header">
+        <h2
+          transition:fly={{ y: 50, delay: 250, duration: 400 }}
+          class="video__header"
+        >
           Get Beautiful, Younger Looking Skin with Zero Downtime.
         </h2>
-        <h4 transition:fly={{ y: 30, delay: 400, duration: 400 }} class="video__subtext">
+        <h4
+          transition:fly={{ y: 30, delay: 400, duration: 400 }}
+          class="video__subtext"
+        >
           With BBL &reg; HERO &trade;
         </h4>
       {/if}
     </div>
     <div class="video__player">
-      <img {src} alt="Alissa" />
+      <!-- <img {src} alt="Alissa" /> -->
+      <video controls type="video/mp4" src="/images/sciton_vid.mp4">
+        <track
+          src="captions_en.vtt"
+          kind="captions"
+          srclang="en"
+          label="english_captions"
+        />
+      </video>
     </div>
   </main>
 </IntersectionObserver>
@@ -27,8 +43,8 @@
 <style>
   main {
     width: 100%;
-    max-height: 1000px;
     min-height: 800px;
+    height: auto;
     display: grid;
     overflow: hidden;
     grid-template-columns: 1fr;
@@ -52,9 +68,9 @@
     font-size: 24px;
     text-align: center;
   }
-  .video__player img {
+  .video__player video {
     width: 100%;
-    height: auto;
-    background-size: cover;
+    height: 100%;
+    background-size: contain;
   }
 </style>

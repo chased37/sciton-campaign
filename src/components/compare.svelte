@@ -11,30 +11,27 @@
   const slides = [
     {
       id: "one",
-      text: "1 MONTH POST 1TX",
-      subtext:
-        "Actual patient results before (left) and post 1 treatment (right).",
-      blurb: "Courtesy of Laura Granger, MD.",
-      backgroundImage: "/images/alissa.jpg",
-      foregroundImage: "/images/CLEO.jpg",
+      text: "1 MONTH POST 1 TX",
+      subtext: "Actual patient results.",
+      blurb: "Courtesy of Erin Blackwell, AYA Medical Spa",
+      backgroundImage: "/images/bbl1_before.jpg",
+      foregroundImage: "/images/bbl1_after.jpg",
     },
     {
       id: "two",
-      text: "1 MONTH POST 1TX",
-      subtext:
-        "Actual patient results before (left) and post 1 treatment (right).",
-      blurb: "Courtesy of Laura Granger, MD.",
-      backgroundImage: "/images/alissa.jpg",
-      foregroundImage: "/images/CLEO.jpg",
+      text: "1 MONTH POST TX",
+      subtext: "Actual patient results.",
+      blurb: "Courtesy of Dr. Jason Pozner",
+      backgroundImage: "/images/bbl2_before.jpg",
+      foregroundImage: "/images/bbl2_after.jpg",
     },
     {
       id: "three",
-      text: "1 MONTH POST 1TX",
-      subtext:
-        "Actual patient results before (left) and post 1 treatment (right).",
-      blurb: "Courtesy of Laura Granger, MD.",
-      backgroundImage: "/images/alissa.jpg",
-      foregroundImage: "/images/CLEO.jpg",
+      text: "AFTER 3 TREATMENTS",
+      subtext: "Actual patient results.",
+      blurb: "Courtesy of Chris Adigun, MD",
+      backgroundImage: "/images/bbl3_before.jpg",
+      foregroundImage: "/images/bbl3_after.jpg",
     },
   ];
 </script>

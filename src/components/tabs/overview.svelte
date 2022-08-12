@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   let src = "images/roxanne.jpg";
 
   import * as animateScroll from "svelte-scrollto";
@@ -30,7 +32,7 @@
 
 <style>
   main {
-    height: 800px;
+    min-height: 800px;
     width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -91,5 +93,13 @@
     background-size: 220%;
     border-radius: 28px;
     background-position: center;
+  }
+  @media screen and (max-width: 1000px) {
+    main {
+      grid-template-columns: 1fr;
+    }
+    .overview__image {
+      display: none;
+    }
   }
 </style>

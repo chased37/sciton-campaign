@@ -38,6 +38,9 @@
 {/each}
 
 <style>
+  .box {
+    padding-bottom: 3rem;
+  }
   .bbl__header {
     height: 150px;
     background-color: var(--tertiary);

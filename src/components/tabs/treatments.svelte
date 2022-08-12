@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   import * as animateScroll from "svelte-scrollto";
 </script>
 
@@ -34,6 +36,7 @@
 <style>
   main {
     display: grid;
+    min-height: 800px;
     grid-template-columns: 1fr;
     padding-top: 5rem;
   }
