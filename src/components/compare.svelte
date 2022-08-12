@@ -45,7 +45,7 @@
       transition:fly={{ y: 50, delay: 250, duration: 400 }}
       class="compare__heading"
     >
-      Before and After
+      Results You Can See
     </h3>
   {/if}
   <main bind:this={node}>
