@@ -68,9 +68,14 @@
     font-size: 24px;
     text-align: center;
   }
+  .video__player {
+    margin: auto;
+  }
   .video__player video {
     width: 100%;
-    height: 100%;
+    margin: auto;
+    height: auto;
+    max-height: 1000px;
     background-size: contain;
   }
 </style>

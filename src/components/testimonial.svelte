@@ -4,7 +4,7 @@
   const slides = [
     {
       id: "one",
-      text: "I have never tried lasees before, so I was anxious about the treatment and results. I was shocked how easy the HERO treatment was, and the immediatle results of glowing smooth skin. I have aleady signed up for my next BBL® HERO™ treatment in 3 months.",
+      text: "I have never tried lasers before, so I was anxious about the treatment and results. I was shocked how easy the HERO treatment was, and the immediatle results of glowing smooth skin. I have aleady signed up for my next BBL® HERO™ treatment in 3 months.",
       author: "Lindsay P.",
     },
     {
