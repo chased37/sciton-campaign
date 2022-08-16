@@ -28,7 +28,7 @@
     </div>
     <div class="video__player">
       <!-- <img {src} alt="Alissa" /> -->
-      <video controls type="video/mp4" src="/images/sciton_vid.mp4">
+      <video controls type="video/mp4" src="/images/sciton_vid_edit2.mp4">
         <track
           src="captions_en.vtt"
           kind="captions"
@@ -68,9 +68,14 @@
     font-size: 24px;
     text-align: center;
   }
+  .video__player {
+    margin: auto;
+  }
   .video__player video {
     width: 100%;
-    height: 100%;
+    margin: auto;
+    height: auto;
+    max-height: 1000px;
     background-size: contain;
   }
 </style>

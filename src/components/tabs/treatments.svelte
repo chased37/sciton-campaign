@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+  // @ts-nocheck
 
   import * as animateScroll from "svelte-scrollto";
 </script>
@@ -100,5 +100,26 @@
   }
   .treatments__button:hover {
     cursor: pointer;
+  }
+  @media screen and (max-width: 1200px) {
+    .treatments__list {
+      grid-template-columns: 1fr 1fr;
+      height: auto;
+      padding-bottom: 0;
+      width: 100%;
+    }
+    .treatments__list li {
+      margin: 1rem 0;
+    }
+    .treatments__heading {
+      padding-bottom: 0;
+    }
+    .treatments__title {
+      padding-bottom: 1rem;
+    }
+    .treatments__desc {
+      width: 70%;
+      margin: auto;
+    }
   }
 </style>
