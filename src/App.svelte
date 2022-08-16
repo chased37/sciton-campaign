@@ -8,6 +8,7 @@
   import Map from "./components/map.svelte";
   import Newsletter from "./components/newsletter.svelte";
   import Divider from "./components/divider.svelte";
+  import StoreLocator from "./components/storeLocator.svelte";
 
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
@@ -40,7 +41,7 @@
   <Bbl componentId="bbl" />
   <Video />
   <Compare />
-  <Map />
+  <StoreLocator />
   <Testimonial />
   <Divider />
   <Newsletter />
