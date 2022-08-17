@@ -1,7 +1,6 @@
 <script>
   import mapboxgl from "mapbox-gl";
   import "mapbox-gl/dist/mapbox-gl.css";
-  import geoData from "./stations.json";
   import { onMount } from "svelte";
   mapboxgl.accessToken =
     "pk.eyJ1Ijoic2NpdG9ubWFya2V0aW5nIiwiYSI6ImNrd28wYWV2ZzA2MHczMHBhYXBtbWs1bGwifQ.X3UptPPy16vEa8G9lKH46A";
@@ -24,6 +23,7 @@
         (error, image) => {
           if (error) throw error;
           map.addImage("custom-marker", image);
+   
 
           map.addSource("points", {
             type: "geojson",
@@ -33,13 +33,13 @@
                 {
                   geometry: {
                     type: "Point",
-                    coordinates: [-76.9750541388, 38.8410857803],
+                    coordinates: [-96.7770034, 32.7912842],
                   },
                   type: "Feature",
                   properties: {
                     description: "Southern Ave",
                     "marker-symbol": "rail-metro",
-                    title: "Southern Ave",
+                    title: "Texas Dermatology Associates",
                     url: "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
                     lines: ["Green"],
                     address: "1411 Southern Avenue, Temple Hills, MD 20748",

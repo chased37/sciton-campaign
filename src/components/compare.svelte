@@ -96,6 +96,7 @@
     margin: auto;
     width: 450px;
     overflow: hidden;
+    z-index: 1;
   }
   .compare__img-layout {
     width: 100%;

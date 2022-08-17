@@ -70,7 +70,7 @@
     position: fixed;
     background-color: var(--tertiary);
     top: 0;
-    z-index: 1;
+    z-index: 10;
     transition: transform 100ms linear;
   }
   .header__nav {
