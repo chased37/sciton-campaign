@@ -116,7 +116,7 @@
   }
 
   @media screen and (max-width: 1450px) {
-    main {
+    .compare__track {
       grid-template-columns: 1fr 1fr;
     }
   }
