@@ -68,7 +68,7 @@
     position: relative;
   }
   .newsletter__image {
-    background-image: url("images/alissa.jpg");
+    background-image: url("/images/alissa.jpg");
     width: 100%;
     height: auto;
     background-size: cover;
