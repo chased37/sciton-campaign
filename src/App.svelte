@@ -5,10 +5,10 @@
   import Video from "./components/video.svelte";
   import Compare from "./components/compare.svelte";
   import Testimonial from "./components/testimonial.svelte";
-  import Map from "./components/map.svelte";
   import Newsletter from "./components/newsletter.svelte";
   import Divider from "./components/divider.svelte";
   import StoreLocator from "./components/storeLocator.svelte";
+  import Footer from "./footer.svelte";
 
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
@@ -45,6 +45,7 @@
   <Testimonial />
   <Divider />
   <Newsletter />
+  <Footer />
 </main>
 
 <svelte:window bind:scrollY={y} />

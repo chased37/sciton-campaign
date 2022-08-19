@@ -1,5 +1,6 @@
 <script>
   import { fly, fade } from "svelte/transition";
+  // @ts-ignore
   import { onMount } from "svelte";
   export let items = [];
   export let activeTabValue = 1;

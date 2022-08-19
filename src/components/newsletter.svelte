@@ -1,6 +1,6 @@
 <script>
   let size = 50;
-  let inIcon = "images/linkedin.png";
+  let inIcon = "images/linkedin-fixed.png";
   let tiktokIcon = "images/tiktok.png";
   let instaIcon = "images/insta.png";
 </script>
@@ -12,8 +12,8 @@
       <li class="newsletter__socials-item">
         <a href="/"
           ><img
-            height={size - 5}
-            width={size - 5}
+            height={size + 7}
+            width={size + 7}
             style="margin:auto"
             src={inIcon}
             alt="LinkedIn Link"
@@ -103,6 +103,13 @@
   }
   .newsletter__socials-item {
     margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .newsletter__socials-item a {
+    height: auto;
+    width: auto;
   }
   .newsletter__heading {
     font-family: var(--ivyMode);

@@ -1,39 +1,28 @@
 <script>
   // @ts-nocheck
 
-  import { fly } from "svelte/transition";
-  // @ts-nocheck
+  // @ts-ignore
+  import { onMount } from "svelte";
+  import { fly, fade } from "svelte/transition";
   import IntersectionObserver from "svelte-intersection-observer";
-  import CompareTabs from "./compareTabs.svelte";
-  import ImageCompare from "svelte-image-compare";
+  import CompareOne from "./compare-tabs/compareOne.svelte";
+  import CompareTwo from "./compare-tabs/compareTwo.svelte";
+
+  export let activeTabValue = 1;
+
+  let animate = false;
+  onMount(() => {
+    animate = true;
+  });
 
   let node;
-  const slides = [
-    {
-      id: "one",
-      text: "1 MONTH POST 1 TX",
-      subtext: "Actual patient results.",
-      blurb: "Courtesy of Erin Blackwell, AYA Medical Spa",
-      backgroundImage: "/images/bbl1_before.jpg",
-      foregroundImage: "/images/bbl1_after.jpg",
-    },
-    {
-      id: "two",
-      text: "1 MONTH POST TX",
-      subtext: "Actual patient results.",
-      blurb: "Courtesy of Dr. Jason Pozner",
-      backgroundImage: "/images/bbl2_before.jpg",
-      foregroundImage: "/images/bbl2_after.jpg",
-    },
-    {
-      id: "three",
-      text: "AFTER 3 TREATMENTS",
-      subtext: "Actual patient results.",
-      blurb: "Courtesy of Chris Adigun, MD",
-      backgroundImage: "/images/bbl3_before.jpg",
-      foregroundImage: "/images/bbl3_after.jpg",
-    },
+
+  const boxes = [
+    { value: 1, id: "one", component: CompareOne },
+    { value: 2, id: "two", component: CompareTwo },
   ];
+
+  const handleClick = (tabValue) => () => (activeTabValue = tabValue);
 </script>
 
 <IntersectionObserver once element={node} let:intersecting>
@@ -45,29 +34,30 @@
       Results You Can See
     </h3>
   {/if}
+
   <main bind:this={node}>
-    {#each slides as slide (slide.id)}
-      {#if intersecting}
-        <div
-          transition:fly={{ y: 10, delay: 400, duration: 500 }}
-          id={slide.id}
-          class="compare__slide"
-        >
-          <div class="compare__img-layout">
-            <ImageCompare
-              before={slide.backgroundImage}
-              after={slide.foregroundImage}
-              contain={true}
-              overlay={false}
-            />
+    {#each boxes as box (box.value)}
+      {#if activeTabValue == box.value}
+        {#if intersecting}
+          <div class="box" in:fade={{ delay: 200, duration: 500 }}>
+            <svelte:component this={box.component} />
           </div>
-          <p class="compare__slide-subtext">{slide.subtext}</p>
-          <p class="compare__slide-text">{slide.text}</p>
-          <p class="compare__slide-blurb">{slide.blurb}</p>
-        </div>
+        {/if}
       {/if}
     {/each}
   </main>
+
+  <div class="compare__nav">
+    {#if animate}
+      <ul in:fade={{ duration: 300 }} class="compare__nav-c">
+        {#each boxes as box (box.value)}
+          <li id={box.id} class={activeTabValue === box.value ? "active" : ""}>
+            <span on:click={handleClick(box.value)}><button /></span>
+          </li>
+        {/each}
+      </ul>
+    {/if}
+  </div>
 </IntersectionObserver>
 
 <style>
@@ -75,10 +65,13 @@
     width: 100%;
     min-height: 700px;
     overflow: hidden;
+  }
+  .box {
+    width: 100%;
     display: grid;
+    height: 100%;
+    min-height: 700px;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    justify-content: center;
   }
   .compare__heading {
     width: 100%;
@@ -89,54 +82,51 @@
     text-align: center;
     padding-top: 4rem;
   }
-  .compare__slide {
-    height: 600px;
-    border: 1px solid var(--secondary);
-    border-radius: 10px;
-    margin: auto;
-    width: 450px;
-    overflow: hidden;
-    z-index: 1;
-  }
-  .compare__img-layout {
+
+  .compare__nav {
+    height: 75px;
     width: 100%;
-    border-radius: 10px;
-    height: 450px;
-    position: relative;
   }
-  .compare__slide-text,
-  .compare__slide-subtext,
-  .compare__slide-blurb {
-    font-family: var(--adrianna);
-    width: 80%;
+
+  .compare__nav-c {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
   }
-  .compare__slide-subtext {
-    color: rgba(0, 0, 0, 0.413);
+
+  span {
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
   }
-  .compare__slide-text {
-    font-size: 30px;
-    text-align: center;
-    line-height: 1.3;
-    margin: auto;
-    color: var(--primary);
+
+  li > span > button:hover {
+    cursor: pointer;
   }
-  .compare__slide-subtext {
-    font-size: 13px;
-    text-align: center;
-    padding: 0.5rem 0;
-    margin: auto;
+
+  li > span > button {
+    background-color: lightgrey;
+    border: none;
+    border-radius: 3px;
+    width: 35px;
+    height: 5px;
+    transition: ease 0.7s;
   }
-  .compare__slide-blurb {
-    color: var(--secondary);
-    text-align: center;
-    margin: auto;
+
+  li.active > span > button {
+    width: 100px;
+    transition: ease 0.7s;
+    background-color: var(--secondary);
   }
+
   @media screen and (max-width: 1450px) {
     main {
       grid-template-columns: 1fr 1fr;
-    }
-    .compare__slide:nth-child(2) {
-      display: none;
     }
   }
 </style>

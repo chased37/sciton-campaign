@@ -1,4 +1,7 @@
 <script>
+  // @ts-nocheck
+
+  // @ts-ignore
   import { onMount } from "svelte";
   import mapboxgl from "mapbox-gl";
   mapboxgl.accessToken =
@@ -1579,11 +1582,10 @@
   let loadedMap;
 
   function createPopUp(currentFeature) {
-    const popUps = document.getElementsByClassName("mapboxgl-popup");
-    /** Check if there is already a popup on the map and if so, remove it */
-    if (popUps[0]) popUps[0].remove();
-
-    const popup = new mapboxgl.Popup({ closeOnClick: false })
+    const popup = new mapboxgl.Popup({
+      closeOnClick: false,
+      focusAfterOpen: false,
+    })
       .setLngLat(currentFeature.geometry.coordinates)
       .setHTML(
         `<div style="border-radius:3px;font-family:adrianna;height:200px;width:200px;display:grid;grid-template-columns:1fr;"><h3 style="font-size:16px;font-weight:600;text-align:center;width:100%;">${currentFeature.properties.title}</h3><h4 style="font-size:15px;text-align:center;width:100%;">${currentFeature.properties.address}<br>${currentFeature.properties.city}, ${currentFeature.properties.state}<br>${currentFeature.properties.postalCode}</h4><button style="margin:auto;font-size:12px;width:80%;height:50px;color:#fafafa;background-color:#bfa888;border:none;border-radius:5px;">BOOK APPOINTMENT</button></div>`
@@ -1591,17 +1593,25 @@
       .addTo(loadedMap);
   }
 
+  let activeStoreSelect = null;
   function flyToStore(currentFeature) {
-    // document.getElementById(currentFeature.properties.id).className =
-    //   "map__store--title-active";
+    const popUps = document.getElementsByClassName("mapboxgl-popup");
+
+    if (popUps[0]) popUps[0].remove();
+
+    createPopUp(currentFeature);
+
+    activeStoreSelect = currentFeature.properties.id;
     loadedMap.flyTo({
       center: currentFeature.geometry.coordinates,
       zoom: 17,
     });
 
-    setTimeout(function () {
-      createPopUp(currentFeature);
-    }, 3000);
+    // if (activeStoreSelect) {
+    //   setTimeout(function () {
+    //     createPopUp(currentFeature);
+    //   }, 3000);
+    // }
   }
 
   onMount(() => {
@@ -1640,6 +1650,12 @@
     });
 
     map.on("click", "locations", (e) => {
+      const popUps = document.getElementsByClassName("mapboxgl-popup");
+      /** Check if there is already a popup on the map and if so, remove it */
+      if (popUps[0]) popUps[0].remove();
+
+      activeStoreSelect = e.features[0].properties.id;
+
       const coordinates = e.features[0].geometry.coordinates.slice();
       const description = `<div style="font-family:adrianna;height:200px;width:200px;display:grid;grid-template-columns:1fr;"><h3 style="font-size:15px;font-weight:600;text-align:center;width:100%;">${e.features[0].properties.title}</h3><h4 style="font-size:15px;text-align:center;width:100%;">${e.features[0].properties.address}<br>${e.features[0].properties.city}, ${e.features[0].properties.state}<br>${e.features[0].properties.postalCode}</h4><button style="margin:auto;font-size:12px;width:80%;height:50px;color:#fafafa;background-color:#bfa888;border:none;border-radius:5px;">BOOK APPOINTMENT</button></div>`;
 
@@ -1647,11 +1663,24 @@
         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
       }
 
-      new mapboxgl.Popup()
+      new mapboxgl.Popup({ focusAfterOpen: false })
         .setLngLat(coordinates)
         .setHTML(description)
         .addTo(map);
     });
+
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true,
+        },
+        // When active the map will receive updates to the device's location as it changes.
+        trackUserLocation: true,
+        // Draw an arrow next to the location dot to indicate which direction the device is heading.
+        showUserHeading: true,
+      })
+    );
+    map.addControl(new mapboxgl.NavigationControl());
   });
 
   let stringToMatch = "";
@@ -1667,11 +1696,18 @@
             .includes(stringToMatch.toLowerCase()) ||
           store.properties.city
             .toLowerCase()
-            .includes(stringToMatch.toLowerCase()) ||
-          store.properties.title
-            .toLowerCase()
-            .includes(providerMatch.toLowerCase())
+            .includes(stringToMatch.toLowerCase())
         );
+      });
+    } else {
+      storeArr;
+    }
+
+    if (providerMatch) {
+      return storeArr.filter((store) => {
+        return store.properties.title
+          .toLowerCase()
+          .includes(providerMatch.toLowerCase());
       });
     } else {
       return storeArr;
@@ -1685,15 +1721,11 @@
       <h1 class="map__title">
         Find Your Local <br /> BBL &reg; HERO &trade; Providers
       </h1>
+      <p>Filter Results</p>
       <div class="map__search">
         <input
-          placeholder="City, Zip"
+          placeholder="City or Zip"
           bind:value={stringToMatch}
-          class="map__input"
-        />
-        <input
-          placeholder="Provider"
-          bind:value={providerMatch}
           class="map__input"
         />
       </div>
@@ -1702,7 +1734,11 @@
       {#each getFilteredStores(storeArr, stringToMatch, providerMatch) as store, i}
         <div class="map__store" id={store.properties.id}>
           <div class="map__store--c-buttons">
-            <button class="map__store--title" on:click={() => flyToStore(store)}
+            <button
+              class={activeStoreSelect === store.properties.id
+                ? "map__store--title-active"
+                : "map__store--title"}
+              on:click={() => flyToStore(store)}
               >{store.properties.title}</button
             >
             <button class="map__store--book">BOOK APPOINTMENT</button>
@@ -1730,7 +1766,7 @@
   main {
     width: 100%;
     min-height: 500px;
-    height: 100vh;
+    height: 75vh;
     display: grid;
     grid-template-columns: 2fr 3fr;
   }
@@ -1777,6 +1813,14 @@
     margin: auto;
   }
 
+  .heading p {
+    color: var(--offWhite);
+    font-family: var(--ivyMode);
+    width: 90%;
+    font-size: 15px;
+    margin: auto;
+  }
+
   .listings-sidebar {
     height: calc(100% - 250px);
     overflow-y: scroll;
@@ -1807,7 +1851,7 @@
     transform: all ease 2s;
   }
 
-  /* .map__store--title-active {
+  .map__store--title-active {
     color: var(--secondary);
     background-color: var(--offWhite);
     border: none;
@@ -1816,7 +1860,7 @@
     font-size: 20px;
     text-align: left;
     font-weight: 600;
-  } */
+  }
 
   .map__store--book {
     height: 40px;

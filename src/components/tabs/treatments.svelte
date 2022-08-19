@@ -40,9 +40,6 @@
     grid-template-columns: 1fr;
     padding-top: 5rem;
   }
-  .treatments__heading {
-    padding-bottom: 3rem;
-  }
   .treatments__title {
     font-family: var(--ivyMode);
     font-size: 66px;

@@ -1,4 +1,6 @@
 <script>
+  import * as animateScroll from "svelte-scrollto";
+
   let src = "/images/logo-sciton.png";
   export let duration = "300ms";
   export let offset = 0;
@@ -47,14 +49,18 @@
       <!-- <a href="/">BBL HERO Treatments</a> -->
     </div>
     <div class="header__link header__link--2">
-      <a href="/">Find My Provider</a>
+      <button
+        on:click={() =>
+          animateScroll.scrollTo({ element: "#map", duration: 700 })}
+        >Find My Provider</button
+      >
     </div>
     <div class="header__hamburger">
-      <div class="hamburger-lines">
-        <span class="line line1" />
-        <span class="line line2" />
-        <span class="line line3" />
-      </div>
+      <a
+        target="_blank"
+        href="https://www.google.com/url?q=https://sciton.com/bbl-hero-by-sciton/&source=gmail-imap&ust=1661469484000000&usg=AOvVaw0-M7ILVfLaFgfVbM7C1CmY"
+        >Providers Learn More</a
+      >
     </div>
   </div>
 </main>
@@ -90,9 +96,24 @@
     height: auto;
     padding-left: 2rem;
   }
-  .header__link a {
+  .header__link button {
     text-decoration: none;
     color: black;
+    background-color: var(--offwhite);
+    border: none;
+    font-size: 15px;
+    font-family: var(--adrianna);
+  }
+  .header__link button:hover {
+    cursor: pointer;
+  }
+  .header__hamburger a {
+    text-decoration: none;
+    color: black;
+    background-color: var(--offwhite);
+    border: none;
+    font-size: 15px;
+    font-family: var(--adrianna);
   }
   .show {
     transform: translateY(0%);
@@ -107,88 +128,19 @@
     justify-content: center;
     align-items: center;
   }
-  .nav-container .hamburger-lines {
-  display: block;
-  height: 26px;
-  width: 32px;
-  position: absolute;
-  top: 17px;
-  left: 20px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+  .header__hamburger {
+    height: 60%;
+    border-right: solid 1px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.nav-container .hamburger-lines .line {
-  display: block;
-  height: 4px;
-  width: 100%;
-  border-radius: 10px;
-  background: #0e2431;
-}
-
-.nav-container .hamburger-lines .line1 {
-  transform-origin: 0% 0%;
-  transition: transform 0.4s ease-in-out;
-}
-
-.nav-container .hamburger-lines .line2 {
-  transition: transform 0.2s ease-in-out;
-}
-
-.nav-container .hamburger-lines .line3 {
-  transform-origin: 0% 100%;
-  transition: transform 0.4s ease-in-out;
-}
-
-.header__ .menu-items {
-  padding-top: 120px;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-  height: 100vh;
-  width: 100%;
-  transform: translate(-150%);
-  display: flex;
-  flex-direction: column;
-  margin-left: -40px;
-  padding-left: 50px;
-  transition: transform 0.5s ease-in-out;
-  text-align: center;
-}
-
-.navbar .menu-items li {
-  margin-bottom: 1.2rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.logo {
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  font-size: 1.2rem;
-  color: #0e2431;
-}
-
-.nav-container input[type="checkbox"]:checked ~ .menu-items {
-  transform: translateX(0);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-  transform: rotate(45deg);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-  transform: scaleY(0);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-  transform: rotate(-45deg);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .logo{
-  display: none;
-}
-
-
+  .logo {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: #0e2431;
+  }
 </style>
