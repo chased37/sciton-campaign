@@ -1,8 +1,8 @@
 <script>
   let size = 50;
-  let inIcon = "images/linkedin-fixed.png";
-  let tiktokIcon = "images/tiktok.png";
-  let instaIcon = "images/insta.png";
+  let inIcon = "/images/linkedin-fixed.png";
+  let tiktokIcon = "/images/tiktok.png";
+  let instaIcon = "/images/insta.png";
 </script>
 
 <div class="newsletter">

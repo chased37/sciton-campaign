@@ -1,10 +1,10 @@
 <script>
   import { fly, fade } from "svelte/transition";
   import { onMount } from "svelte";
-  let src = "images/bbl-hero.png";
-  let inIcon = "images/linkedin.png";
-  let tiktokIcon = "images/tiktok.png";
-  let instaIcon = "images/insta.png";
+  let src = "/images/bbl-hero.png";
+  let inIcon = "/images/linkedin.png";
+  let tiktokIcon = "/images/tiktok.png";
+  let instaIcon = "/images/insta.png";
 
   let size = 30;
   let animate = false;
