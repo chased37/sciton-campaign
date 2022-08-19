@@ -1,8 +1,5 @@
 <script>
 // @ts-nocheck
-
-  let src = "/images/roxanne.jpg";
-
   import * as animateScroll from "svelte-scrollto";
 </script>
 

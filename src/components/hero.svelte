@@ -1,10 +1,10 @@
 <script>
   import { fly, fade } from "svelte/transition";
   import { onMount } from "svelte";
-  let src = "/images/bbl-hero.png";
-  let inIcon = "/images/linkedin.png";
-  let tiktokIcon = "/images/tiktok.png";
-  let instaIcon = "/images/insta.png";
+  let src = "/images/bbl-hero.avif";
+  let inIcon = "/images/linkedin.avif";
+  let tiktokIcon = "/images/tiktok.avif";
+  let instaIcon = "/images/insta.avif";
 
   let size = 30;
   let animate = false;
@@ -20,7 +20,7 @@
         Skin That Looks as Young as You Feel
       </h1>
       <img
-        in:fade={{ delay: 600, duration: 300 }}
+        in:fade={{ delay: 700, duration: 300 }}
         class="hero__image"
         {src}
         alt="BBL Hero"
@@ -68,7 +68,7 @@
     width: 100%;
     height: calc(90vh - 30px);
     min-height: 800px;
-    background-image: url("/images/CLEO.jpg");
+    background-image: url("/images/CLEO.avif");
     background-size: cover;
     box-shadow: inset 0 0 0 2000px rgba(123, 123, 123, 0.3);
     display: flex;

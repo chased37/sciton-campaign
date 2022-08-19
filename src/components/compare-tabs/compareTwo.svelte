@@ -1,35 +1,32 @@
 <script>
   // @ts-nocheck
 
-  import IntersectionObserver from "svelte-intersection-observer";
   import ImageCompare from "svelte-image-compare";
-  import { fly } from "svelte/transition";
 
-  let node;
   const slides = [
     {
       id: "one",
       text: "1 MONTH POST 1 TX",
       subtext: "Actual patient results.",
       blurb: "Courtesy of Erin Blackwell, AYA Medical Spa",
-      backgroundImage: "/images/bbl1_before.jpg",
-      foregroundImage: "/images/bbl1_after.jpg",
+      backgroundImage: "/images/bbl1_before.avif",
+      foregroundImage: "/images/bbl1_after.avif",
     },
     {
       id: "two",
       text: "1 MONTH POST TX",
       subtext: "Actual patient results.",
       blurb: "Courtesy of Dr. Jason Pozner",
-      backgroundImage: "/images/bbl2_before.jpg",
-      foregroundImage: "/images/bbl2_after.jpg",
+      backgroundImage: "/images/bbl2_before.avif",
+      foregroundImage: "/images/bbl2_after.avif",
     },
     {
       id: "three",
       text: "AFTER 3 TREATMENTS",
       subtext: "Actual patient results.",
       blurb: "Courtesy of Chris Adigun, MD",
-      backgroundImage: "/images/bbl3_before.jpg",
-      foregroundImage: "/images/bbl3_after.jpg",
+      backgroundImage: "/images/bbl3_before.avif",
+      foregroundImage: "/images/bbl3_after.avif",
     },
   ];
 </script>

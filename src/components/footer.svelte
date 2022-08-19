@@ -1,5 +1,5 @@
 <script>
-  let src = "/images/logo-sciton.png";
+  let src = "/images/logo-sciton.avif";
 </script>
 
 <div class="footer">

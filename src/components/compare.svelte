@@ -35,7 +35,7 @@
     </h3>
   {/if}
 
-  <main bind:this={node}>
+  <div class="compare__track" bind:this={node}>
     {#each boxes as box (box.value)}
       {#if activeTabValue == box.value}
         {#if intersecting}
@@ -45,7 +45,7 @@
         {/if}
       {/if}
     {/each}
-  </main>
+  </div>
 
   <div class="compare__nav">
     {#if animate}
@@ -61,7 +61,7 @@
 </IntersectionObserver>
 
 <style>
-  main {
+  .compare__track {
     width: 100%;
     min-height: 700px;
     overflow: hidden;

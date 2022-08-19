@@ -1,6 +1,5 @@
 <script>
   // @ts-nocheck
-  import { flip } from "svelte/animate";
   import ImageCompare from "svelte-image-compare";
 
   export let slides;

@@ -1,8 +1,8 @@
 <script>
   let size = 50;
-  let inIcon = "/images/linkedin-fixed.png";
-  let tiktokIcon = "/images/tiktok.png";
-  let instaIcon = "/images/insta.png";
+  let inIcon = "/images/linkedin-fixed.avif";
+  let tiktokIcon = "/images/tiktok.avif";
+  let instaIcon = "/images/insta.avif";
 </script>
 
 <div class="newsletter">
@@ -68,7 +68,7 @@
     position: relative;
   }
   .newsletter__image {
-    background-image: url("/images/alissa.jpg");
+    background-image: url("/images/alissa.avif");
     width: 100%;
     height: auto;
     background-size: cover;

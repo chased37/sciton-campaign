@@ -28,7 +28,7 @@
   main {
     width: 100%;
     height: 900px;
-    background-image: url("/images/group.jpg");
+    background-image: url("/images/group.avif");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

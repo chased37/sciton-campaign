@@ -1,8 +1,5 @@
 <script>
 // @ts-nocheck
-
-  let src = "/images/roxanne.jpg";
-
   import * as animateScroll from "svelte-scrollto";
 </script>
 
@@ -87,7 +84,7 @@
   .overview__image div {
     width: 90%;
     height: 90%;
-    background-image: url("/images/roxanne.jpg");
+    background-image: url("/images/roxanne.avif");
     margin: auto;
     background-repeat: no-repeat;
     background-size: 220%;

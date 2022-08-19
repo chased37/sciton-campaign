@@ -1,40 +1,20 @@
 <script>
   // @ts-nocheck
-  import { fade, blur, draw } from "svelte/transition";
+  import { blur } from "svelte/transition";
 
-  import { flip } from "svelte/animate";
-
-  let src = "/images/quote.png";
-  let arrow = "/images/chevron-dark.png";
+  let src = "/images/quote.avif";
+  let arrow = "/images/chevron-dark.avif";
 
   export let slides;
   export let speed;
-  let animate = false;
 
   const rotateCarouselLeft = (e) => {
-    const transitioningSlide = slides[slides.length - 1];
-    // document.getElementById(transitioningSlide.id).style.opacity = 0;
     slides = [slides[slides.length - 1], ...slides.slice(0, slides.length - 1)];
-    // setTimeout(
-    //   () => (document.getElementById(transitioningSlide.id).style.opacity = 1),
-    //   speed
-    // );
   };
   const rotateCarouselRight = (e) => {
     const transitioningSlide = slides[0];
-    // document.getElementById(transitioningSlide.id).className =
-    //   "transitioning__slide";
 
     slides = [...slides.slice(1, slides.length), slides[0]];
-    // const revertOpacity = () => {
-    //   document.getElementById(transitioningSlide.id).className =
-    //     "carousel__slide";
-    //   console.log(document.getElementById(transitioningSlide.id).className);
-    // };
-    // setTimeout(function () {
-    //   revertOpacity();
-    // }, speed);
-    // console.log(document.getElementById(transitioningSlide.id).className);
   };
 </script>
 

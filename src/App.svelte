@@ -8,7 +8,7 @@
   import Newsletter from "./components/newsletter.svelte";
   import Divider from "./components/divider.svelte";
   import StoreLocator from "./components/storeLocator.svelte";
-  import Footer from "./footer.svelte";
+  import Footer from "./components/footer.svelte";
 
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";

@@ -1606,12 +1606,6 @@
       center: currentFeature.geometry.coordinates,
       zoom: 17,
     });
-
-    // if (activeStoreSelect) {
-    //   setTimeout(function () {
-    //     createPopUp(currentFeature);
-    //   }, 3000);
-    // }
   }
 
   onMount(() => {

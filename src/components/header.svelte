@@ -1,7 +1,8 @@
 <script>
   import * as animateScroll from "svelte-scrollto";
+import { cubicIn, cubicInOut } from "svelte/easing";
 
-  let src = "/images/logo-sciton.png";
+  let src = "/images/logo-sciton.avif";
   export let duration = "300ms";
   export let offset = 0;
   export let tolerance = 0;
@@ -51,8 +52,11 @@
     <div class="header__link header__link--2">
       <button
         on:click={() =>
-          animateScroll.scrollTo({ element: "#map", duration: 700 })}
-        >Find My Provider</button
+          animateScroll.scrollTo({
+            element: "#map",
+            duration: 700,
+            easing: cubicIn,
+          })}>Find My Provider</button
       >
     </div>
     <div class="header__hamburger">
