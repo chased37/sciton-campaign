@@ -4,7 +4,6 @@
   // @ts-ignore
   import { onMount } from "svelte";
   import { fly, fade } from "svelte/transition";
-  import IntersectionObserver from "svelte-intersection-observer";
   import CompareOne from "./compare-tabs/compareOne.svelte";
   import CompareTwo from "./compare-tabs/compareTwo.svelte";
 
@@ -15,8 +14,6 @@
     animate = true;
   });
 
-  let node;
-
   const boxes = [
     { value: 1, id: "one", component: CompareOne },
     { value: 2, id: "two", component: CompareTwo },
@@ -25,40 +22,34 @@
   const handleClick = (tabValue) => () => (activeTabValue = tabValue);
 </script>
 
-<IntersectionObserver once element={node} let:intersecting>
-  {#if intersecting}
-    <h3
-      transition:fly={{ y: 50, delay: 250, duration: 400 }}
-      class="compare__heading"
-    >
-      Results You Can See
-    </h3>
-  {/if}
+<h3
+  transition:fly={{ y: 50, delay: 250, duration: 400 }}
+  class="compare__heading"
+>
+  Results You Can See
+</h3>
 
-  <div class="compare__track" bind:this={node}>
-    {#each boxes as box (box.value)}
-      {#if activeTabValue == box.value}
-        {#if intersecting}
-          <div class="box" in:fade={{ delay: 200, duration: 500 }}>
-            <svelte:component this={box.component} />
-          </div>
-        {/if}
-      {/if}
-    {/each}
-  </div>
-
-  <div class="compare__nav">
-    {#if animate}
-      <ul in:fade={{ duration: 300 }} class="compare__nav-c">
-        {#each boxes as box (box.value)}
-          <li id={box.id} class={activeTabValue === box.value ? "active" : ""}>
-            <span on:click={handleClick(box.value)}><button /></span>
-          </li>
-        {/each}
-      </ul>
+<div class="compare__track">
+  {#each boxes as box (box.value)}
+    {#if activeTabValue == box.value}
+      <div class="box" in:fade={{ delay: 200, duration: 500 }}>
+        <svelte:component this={box.component} />
+      </div>
     {/if}
-  </div>
-</IntersectionObserver>
+  {/each}
+</div>
+
+<div class="compare__nav">
+  {#if animate}
+    <ul in:fade={{ duration: 300 }} class="compare__nav-c">
+      {#each boxes as box (box.value)}
+        <li id={box.id} class={activeTabValue === box.value ? "active" : ""}>
+          <span on:click={handleClick(box.value)}><button /></span>
+        </li>
+      {/each}
+    </ul>
+  {/if}
+</div>
 
 <style>
   .compare__track {
