@@ -90,7 +90,7 @@
   .features__image div {
     width: 90%;
     height: 90%;
-    background-image: url("images/features.gif");
+    background-image: url("/images/features.gif");
     background-repeat: no-repeat;
     margin: auto;
     background-size: 220%;
