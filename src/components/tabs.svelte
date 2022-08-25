@@ -5,7 +5,7 @@
   export let items = [];
   export let activeTabValue = 1;
   export let componentId;
-  let src = "/images/bbl-hero-2.png";
+  let src = "./images/bbl-hero-2.png";
 
   let animate = false;
   onMount(() => {

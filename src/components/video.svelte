@@ -3,7 +3,6 @@
 
   import { fly, fade } from "svelte/transition";
   import IntersectionObserver from "svelte-intersection-observer";
-  let src = "/images/alissa.jpg";
 
   let node;
 </script>
@@ -28,7 +27,7 @@
     </div>
     <div class="video__player">
       <!-- <img {src} alt="Alissa" /> -->
-      <video controls type="video/mp4" src="/images/sciton_vid_edit2.mp4">
+      <video controls type="video/mp4" src="./images/sciton_vid_edit2.mp4">
         <track
           src="captions_en.vtt"
           kind="captions"

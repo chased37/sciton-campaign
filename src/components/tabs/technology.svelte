@@ -114,7 +114,7 @@
   .technology__image div {
     width: 90%;
     height: 90%;
-    background-image: url("/images/technology.gif");
+    background-image: url("./images/technology.gif");
     background-repeat: no-repeat;
     margin: auto;
     background-size: 220%;

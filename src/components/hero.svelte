@@ -1,10 +1,10 @@
 <script>
   import { fly, fade } from "svelte/transition";
   import { onMount } from "svelte";
-  let src = "/images/bbl-hero.png";
-  let inIcon = "/images/linkedin.png";
-  let tiktokIcon = "/images/tiktok.png";
-  let instaIcon = "/images/insta.png";
+  let src = "./images/bbl-hero.png";
+  let inIcon = "./images/linkedin.png";
+  let tiktokIcon = "./images/tiktok.png";
+  let instaIcon = "./images/insta.png";
 
   let size = 30;
   let animate = false;
@@ -68,7 +68,7 @@
     width: 100%;
     height: calc(90vh - 30px);
     min-height: 800px;
-    background-image: url("/images/CLEO.jpg");
+    background-image: url("./images/CLEO.jpg");
     background-size: cover;
     box-shadow: inset 0 0 0 2000px rgba(123, 123, 123, 0.3);
     display: flex;
