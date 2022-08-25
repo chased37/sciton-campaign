@@ -120,4 +120,19 @@
       grid-template-columns: 1fr 1fr;
     }
   }
+  @media screen and (max-width: 1150px) {
+    .box {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media screen and (max-width: 730px) {
+    .box {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media screen and (max-width: 630px) {
+    .compare__heading {
+      font-size: 50px;
+    }
+  }
 </style>

@@ -1,10 +1,10 @@
 <script>
   import { fly, fade } from "svelte/transition";
   import { onMount } from "svelte";
-  let src = "/images/bbl-hero.avif";
-  let inIcon = "/images/linkedin.avif";
-  let tiktokIcon = "/images/tiktok.avif";
-  let instaIcon = "/images/insta.avif";
+  let src = "/images/bbl-hero.png";
+  let inIcon = "/images/linkedin.png";
+  let tiktokIcon = "/images/tiktok.png";
+  let instaIcon = "/images/insta.png";
 
   let size = 30;
   let animate = false;
@@ -28,7 +28,7 @@
     </div>
     <ul in:fade={{ delay: 600, duration: 500 }} class="hero__socials">
       <li class="hero__socials-item">
-        <a href="/"
+        <a target="_blank" href="https://www.linkedin.com/company/sciton"
           ><img
             height={size - 5}
             width={size - 5}
@@ -39,7 +39,7 @@
         >
       </li>
       <li class="hero__socials-item">
-        <a href="/"
+        <a target="_blank" href="https://www.instagram.com/sciton_inc/"
           ><img
             height={size}
             width={size}
@@ -49,7 +49,7 @@
         >
       </li>
       <li class="hero__socials-item">
-        <a href="/"
+        <a target="_blank" href="https://www.tiktok.com/@sciton"
           ><img
             height={size}
             width={size}
@@ -68,7 +68,7 @@
     width: 100%;
     height: calc(90vh - 30px);
     min-height: 800px;
-    background-image: url("/images/CLEO.avif");
+    background-image: url("/images/CLEO.jpg");
     background-size: cover;
     box-shadow: inset 0 0 0 2000px rgba(123, 123, 123, 0.3);
     display: flex;
@@ -115,5 +115,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media screen and (max-width: 600px) {
+    .hero__text {
+      font-size: 50px;
+    }
   }
 </style>

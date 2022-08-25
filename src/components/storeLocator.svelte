@@ -1746,6 +1746,9 @@
               </p>
               <p class="map__store--desc">{store.properties.postalCode}</p>
               <p class="map__store--desc">{store.properties.phoneFormatted}</p>
+              <button class="map__store--book map__store--book--mobile"
+                >BOOK APPOINTMENT</button
+              >
             </div>
             <div />
           </div>
@@ -1832,6 +1835,7 @@
   .map__store--title {
     background-color: var(--offWhite);
     border: none;
+    color: var(--primary);
     padding: none;
     font-family: var(--adrianna);
     font-size: 20px;
@@ -1865,6 +1869,9 @@
     background-color: var(--secondary);
     border-radius: 5px;
     border: none;
+  }
+  .map__store--book--mobile {
+    display: none;
   }
 
   .map__store--book:hover {
@@ -1925,9 +1932,11 @@
       grid-row: 2;
       display: grid;
       grid-template-columns: 1fr;
+      min-width: auto;
     }
     .heading {
-      height: 75px;
+      height: 100px;
+      border-radius: 0;
     }
     .map__title {
       display: none;
@@ -1941,6 +1950,22 @@
     .map {
       height: 400px;
       width: 100%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .map {
+      height: 300px;
+    }
+    .map__store--c-buttons {
+      grid-template-columns: 1fr;
+    }
+    .map__store--book {
+      display: none;
+    }
+
+    .map__store--book--mobile {
+      display: inherit;
+      margin: 15px auto 0 5%;
     }
   }
 </style>

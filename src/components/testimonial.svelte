@@ -28,12 +28,17 @@
   main {
     width: 100%;
     height: 900px;
-    background-image: url("/images/group.avif");
+    background-image: url("/images/group.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
+  }
+  @media screen and (max-width: 850px) {
+    main {
+      height: 700px;
+    }
   }
 </style>

@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+  // @ts-nocheck
   import * as animateScroll from "svelte-scrollto";
 </script>
 
@@ -84,7 +84,7 @@
   .overview__image div {
     width: 90%;
     height: 90%;
-    background-image: url("/images/roxanne.avif");
+    background-image: url("/images/roxanne.jpg");
     margin: auto;
     background-repeat: no-repeat;
     background-size: 220%;
@@ -98,5 +98,13 @@
     .overview__image {
       display: none;
     }
+  }
+  @media screen and (max-width: 600px) {
+    main {
+      height: 600px;
+    }
+    .overview__heading {
+    font-size: 50px;
+  }
   }
 </style>

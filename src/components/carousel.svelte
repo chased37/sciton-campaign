@@ -2,8 +2,8 @@
   // @ts-nocheck
   import { blur } from "svelte/transition";
 
-  let src = "/images/quote.avif";
-  let arrow = "/images/chevron-dark.avif";
+  let src = "/images/quote.png";
+  let arrow = "/images/chevron-dark.png";
 
   export let slides;
   export let speed;
@@ -12,8 +12,6 @@
     slides = [slides[slides.length - 1], ...slides.slice(0, slides.length - 1)];
   };
   const rotateCarouselRight = (e) => {
-    const transitioningSlide = slides[0];
-
     slides = [...slides.slice(1, slides.length), slides[0]];
   };
 </script>
@@ -126,5 +124,33 @@
   }
   .carousel__c-icon img {
     transform: rotate(180deg);
+  }
+
+  @media screen and (max-width: 1100px) {
+    .carousel__slide-text {
+      font-size: 25px;
+    }
+  }
+  @media screen and (max-width: 850px) {
+    .carousel {
+      height: 100%;
+      margin: 0;
+    }
+    .carousel__slides {
+      height: 100%;
+    }
+    .carousel__button--right {
+      right: 30px;
+      top: 87%;
+    }
+    .carousel__button--left {
+      left: 30px;
+
+      top: 87%;
+      transform: rotate(180deg);
+    }
+    .carousel__slide-text {
+      font-size: 17px;
+    }
   }
 </style>

@@ -77,4 +77,9 @@
     transform: translateY(15%);
     transition: transform 400ms ease-in-out;
   }
+  @media (max-height: 700px) {
+    #bbl-anchor, #bbl-anchor button {
+      display: none;
+    }
+  }
 </style>

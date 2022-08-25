@@ -6,48 +6,46 @@
   const slides = [
     {
       id: "one",
-      text: "1 MONTH POST 1 TX",
+      text: "AFTER 1 TX",
       subtext: "Actual patient results.",
-      blurb: "Courtesy of Erin Blackwell, AYA Medical Spa",
-      backgroundImage: "/images/bbl1_before.avif",
-      foregroundImage: "/images/bbl1_after.avif",
+      blurb: "Courtesy of Sharon Grasso, Permanent Touch Cosmetics",
+      backgroundImage: "/images/B&A-03.jpg",
+      foregroundImage: "/images/B&A-04.jpg",
     },
     {
       id: "two",
       text: "1 MONTH POST TX",
       subtext: "Actual patient results.",
-      blurb: "Courtesy of Dr. Jason Pozner",
-      backgroundImage: "/images/bbl2_before.avif",
-      foregroundImage: "/images/bbl2_after.avif",
+      blurb: "Courtesy of Steven Swengel, MD",
+      backgroundImage: "/images/B&A-01.jpg",
+      foregroundImage: "/images/B&A-02.jpg",
     },
     {
       id: "three",
-      text: "AFTER 3 TREATMENTS",
+      text: "AFTER 3 TX",
       subtext: "Actual patient results.",
-      blurb: "Courtesy of Chris Adigun, MD",
-      backgroundImage: "/images/bbl3_before.avif",
-      foregroundImage: "/images/bbl3_after.avif",
+      blurb: "Courtesy of Jason Pozner, MD",
+      backgroundImage: "/images/B&A-05.jpg",
+      foregroundImage: "/images/B&A-06.jpg",
     },
   ];
 </script>
 
-
-  {#each slides as slide (slide.id)}
-    <div id={slide.id} class="compare__slide">
-      <div class="compare__img-layout">
-        <ImageCompare
-          before={slide.backgroundImage}
-          after={slide.foregroundImage}
-          contain={true}
-          overlay={false}
-        />
-      </div>
-      <p class="compare__slide-subtext">{slide.subtext}</p>
-      <p class="compare__slide-text">{slide.text}</p>
-      <p class="compare__slide-blurb">{slide.blurb}</p>
+{#each slides as slide (slide.id)}
+  <div id={slide.id} class="compare__slide">
+    <div class="compare__img-layout">
+      <ImageCompare
+        before={slide.backgroundImage}
+        after={slide.foregroundImage}
+        contain={true}
+        overlay={false}
+      />
     </div>
-  {/each}
-
+    <p class="compare__slide-subtext">{slide.subtext}</p>
+    <p class="compare__slide-text">{slide.text}</p>
+    <p class="compare__slide-blurb">{slide.blurb}</p>
+  </div>
+{/each}
 
 <style>
   .compare__slide {
@@ -58,6 +56,9 @@
     width: 450px;
     overflow: hidden;
     z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
   }
   .compare__img-layout {
     width: 100%;
@@ -91,5 +92,30 @@
     color: var(--secondary);
     text-align: center;
     margin: auto;
+  }
+  @media screen and (max-width: 1450px) {
+    .compare__slide {
+      height: 500px;
+      width: 350px;
+    }
+    .compare__img-layout {
+      height: 300px;
+    }
+    .compare__slide-text {
+      font-size: 25px;
+    }
+    .compare__slide-blurb {
+      font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 1150px) {
+    .compare__slide:nth-child(2){
+      display: none;
+    }
+  }
+  @media screen and (max-width: 730px) {
+    .compare__slide:nth-child(1){
+      display: none;
+    }
   }
 </style>

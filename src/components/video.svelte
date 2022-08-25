@@ -78,4 +78,13 @@
     max-height: 1000px;
     background-size: contain;
   }
+  @media screen and (max-width: 600px) {
+    main {
+      min-height: 0;
+      height: auto;
+    }
+    .video__header {
+      font-size: 50px;
+    }
+  }
 </style>

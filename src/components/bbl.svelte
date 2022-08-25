@@ -28,4 +28,10 @@
     padding-bottom: 3rem;
     overflow-x: hidden;
   }
+  @media screen and (max-width: 600px) {
+    main {
+      min-height: 0;
+      height: auto;
+    }
+  }
 </style>

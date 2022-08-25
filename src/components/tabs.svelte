@@ -5,7 +5,7 @@
   export let items = [];
   export let activeTabValue = 1;
   export let componentId;
-  let src = "/images/bbl-hero-2.avif";
+  let src = "/images/bbl-hero-2.png";
 
   let animate = false;
   onMount(() => {
@@ -116,6 +116,14 @@
       text-align: center;
     }
     .bbl__logo {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .bbl__header {
+      display: none;
+    }
+    #features, #technology, #treatments {
       display: none;
     }
   }
