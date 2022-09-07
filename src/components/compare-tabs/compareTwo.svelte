@@ -13,20 +13,20 @@
       foregroundImage: "./images/B&A-04.jpg",
     },
     {
-      id: "two",
-      text: "1 MONTH POST TX",
-      subtext: "Actual patient results.",
-      blurb: "Courtesy of Steven Swengel, MD",
-      backgroundImage: "./images/B&A-01.jpg",
-      foregroundImage: "./images/B&A-02.jpg",
-    },
-    {
       id: "three",
       text: "AFTER 3 TX",
       subtext: "Actual patient results.",
       blurb: "Courtesy of Jason Pozner, MD",
       backgroundImage: "./images/B&A-05.jpg",
       foregroundImage: "./images/B&A-06.jpg",
+    },
+    {
+      id: "two",
+      text: "AFTER 3 TX",
+      subtext: "Actual patient results.",
+      blurb: "Courtesy of Chris Adigun, MD",
+      backgroundImage: "./images/B&A-11.jpg",
+      foregroundImage: "./images/B&A-12.jpg",
     },
   ];
 </script>
@@ -109,12 +109,12 @@
     }
   }
   @media screen and (max-width: 1150px) {
-    .compare__slide:nth-child(2){
+    .compare__slide:nth-child(2) {
       display: none;
     }
   }
   @media screen and (max-width: 730px) {
-    .compare__slide:nth-child(1){
+    .compare__slide:nth-child(1) {
       display: none;
     }
   }

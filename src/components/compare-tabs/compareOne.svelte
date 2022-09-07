@@ -13,17 +13,17 @@
     },
     {
       id: "two",
-      text: "AFTER 3 TX",
+      text: "1 MONTH POST TX",
       subtext: "Actual patient results.",
-      blurb: "Courtesy of Chris Adigun, MD",
-      backgroundImage: "./images/B&A-11.jpg",
-      foregroundImage: "./images/B&A-12.jpg",
+      blurb: "Courtesy of Steven Swengel, MD",
+      backgroundImage: "./images/B&A-01.jpg",
+      foregroundImage: "./images/B&A-02.jpg",
     },
     {
       id: "three",
       text: "AFTER 3 TX",
       subtext: "Actual patient results.",
-      blurb: "© PATRICK BITTER, MD, FAAD 2021",
+      blurb: "PATRICK BITTER, MD, FAAD",
       backgroundImage: "./images/B&A-09.jpg",
       foregroundImage: "./images/B&A-10.jpg",
     },
@@ -108,12 +108,12 @@
     }
   }
   @media screen and (max-width: 1150px) {
-    .compare__slide:nth-child(2){
+    .compare__slide:nth-child(2) {
       display: none;
     }
   }
   @media screen and (max-width: 730px) {
-    .compare__slide:nth-child(1){
+    .compare__slide:nth-child(1) {
       display: none;
     }
   }

@@ -31,6 +31,9 @@
           </div>
           <p class="carousel__slide-text">{slide.text}</p>
           <p class="carousel__slide-subtext">{slide.author}</p>
+          <p style="padding-top: 5px;" class="carousel__slide-subtext">
+            actual patient
+          </p>
         </div>
       </div>
     {/each}

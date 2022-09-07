@@ -1713,7 +1713,7 @@
   <div class="sidebar">
     <div class="heading">
       <h1 class="map__title">
-        Find Your Local <br /> BBL &reg; HERO &trade; Providers
+        Find Your Local <br /> BBL HERO Providers
       </h1>
       <p>Filter Results</p>
       <div class="map__search">

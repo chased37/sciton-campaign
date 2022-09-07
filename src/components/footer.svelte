@@ -23,6 +23,11 @@
       <li />
       <a target="_blank" href="https://sciton.com/">sciton.com</a>
     </ul>
+
+    <p class="footer__copyright">
+      Copyright © 2022 Sciton, Inc. All Rights Reserved. Sciton, BBL and HERO
+      are registered trademarks or trademarks of Sciton Inc.
+    </p>
   </div>
 </div>
 
@@ -42,7 +47,8 @@
     margin: auto;
     line-height: 1.5;
   }
-  .footer__list {
+  .footer__list,
+  .footer__copyright {
     padding-left: 0.5rem;
   }
   .footer__list a {
@@ -51,5 +57,8 @@
   }
   .footer__list a:hover {
     color: var(--secondary);
+  }
+  .footer__copyright {
+    font-size: 12px;
   }
 </style>

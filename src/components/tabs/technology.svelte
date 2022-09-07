@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+  // @ts-nocheck
   import * as animateScroll from "svelte-scrollto";
 </script>
 
@@ -9,34 +9,33 @@
     <p class="technology__desc">
       Practitioners all over the world describe their BBL module as the
       workhorse in their practice. They have come to rely on optimized and
-      consistent delivery through dual flashlamps from start to finish without
-      degradation in lamp life. The quick-change filters and snap-on Finesse
-      adapters make providing treatments fast and easy. <br /> <br />
+      consistent delivery provided by the advanced technological features that
+      set it apart from the competition.<br /> <br />
 
-      But none of that would matter if results weren’t there. The proof is in
-      the pudding and that is seen in numerous before and after photos boasting
-      best results. Add to that BBL is awarded in the top procedures year after
-      year in surveys and polls. BBL® HERO™ offers several unique proprietary
-      features, including:
+      But none of that would matter if results weren’t there to back it up. The
+      proof is in the pudding, as shown by the plethora of impressive before and
+      after images, patient accolades, and industry awards.
       <br /> <br />
     </p>
     <ul class="technology__list">
       <li>
-        Broadband Light delivered through BBL® HERO™ can address any visible
-        pigment up to 800nm.
+        Fast lunch time, low social downtime, procedures with ‘wow’ results
       </li>
       <li>
-        HERO – 4x Speed – 3x Peak Power – 2x Cooling for a fast, efficacious and
-        comfortable treatment.
+        Comfortable treatments allow you to skip the numbing cream, with
+        integrated ComfortCool technology
       </li>
-      <li>Quick change filters for improved functionality and convenience.</li>
       <li>
-        Finesse adaptors snap on for quickly treating individual spots or small
-        areas like the upper lip.
+        Customized treatments that address your specific skin condition and
+        treatment goals
+      </li>
+      <li>
+        Versatility to quickly switch between treatments and areas with safe
+        protocol driven software
       </li>
     </ul>
     <p class="technology__desc">
-      BBL® HERO™ includes 9 wavelength filters to deliver a wide variety of
+      BBL HERO includes 9 wavelength filters to deliver a wide variety of
       customizable treatment applications in one handpiece, as opposed to
       competitor IPL devices that require a different handpiece for each
       individual wavelength.

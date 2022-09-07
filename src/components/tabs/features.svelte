@@ -1,20 +1,20 @@
 <script>
-// @ts-nocheck
+  // @ts-nocheck
   import * as animateScroll from "svelte-scrollto";
 </script>
 
 <main>
   <div class="features__text">
     <h2 class="features__heading">
-      BBL &reg; HERO &trade; is a fast and comfortable way to improve your
-      overall skin complexion.
+      BBL HERO is a fast and comfortable way to treat the visible
+      signs of aging anywhere on the body.
     </h2>
     <p class="features__desc">
-      Light energy delivered by BBL® HERO &trade; stimulates your cells to
-      regenerate and restore your skin's youthful appearance, giving you
-      smoother skin, smaller pores and even pigmentation. <br /> <br /> HERO &trade;
-      means immediate results delivered in a comfortable lunchtime treatment with
-      no downtime.
+      Light energy delivered by BBL HERO stimulates your cells to
+      regenerate and restore your skin's youthful appearance; correct pigment
+      and vascular conditions, improve tone and texture, treat acne, remove
+      unwanted hair and more… <br /> <br /> HERO means immediate results
+      delivered in a comfortable lunchtime treatment with no downtime.
     </p>
     <div class="features__c-button">
       <button

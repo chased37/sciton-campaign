@@ -21,7 +21,7 @@
           transition:fly={{ y: 30, delay: 400, duration: 400 }}
           class="video__subtext"
         >
-          With BBL &reg; HERO &trade;
+          With BBL HERO
         </h4>
       {/if}
     </div>

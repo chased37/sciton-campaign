@@ -7,10 +7,13 @@
   <div class="overview__text">
     <h2 class="overview__heading">What is <br /> BBL &reg; HERO &trade;?</h2>
     <p class="overview__desc">
-      BroadBand Light (BBL®) from Sciton® is world renowned for its outstanding
-      outcomes, ease of use, and innovative technology. <br /> <br /> The next generation
-      BBL is here. With BBL® HERO™ (High Energy Rapid Output) you can quickly deliver
-      forever results from head to toe.
+      BroadBand Light (BBL) from Sciton® is world renowned for its outstanding
+      outcomes, ease of use, and innovative technology. Patients love BBL HERO
+      because it is a no-downtime, comfortable procedure that eliminates the
+      visible signs of aging, such as age and sun spots, pores, redness and
+      dull-looking skin. Improving skin’s vitality anywhere on the body. <br />
+      <br /> The next generation BBL is here. With BBL HERO (High Energy Rapid
+      Output) you can quickly deliver forever results from head to toe.
     </p>
     <div class="overview__c-button">
       <button
@@ -104,7 +107,7 @@
       height: 600px;
     }
     .overview__heading {
-    font-size: 50px;
-  }
+      font-size: 50px;
+    }
   }
 </style>
