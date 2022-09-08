@@ -23,7 +23,7 @@
       id: "three",
       text: "AFTER 3 TX",
       subtext: "Actual patient results.",
-      blurb: "PATRICK BITTER, MD, FAAD",
+      blurb: "Courtesy of Patrick Bitter, MD, FAAD",
       backgroundImage: "./images/B&A-09.jpg",
       foregroundImage: "./images/B&A-10.jpg",
     },
