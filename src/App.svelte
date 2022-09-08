@@ -5,9 +5,10 @@
   import Video from "./components/video.svelte";
   import Compare from "./components/compare.svelte";
   import Testimonial from "./components/testimonial.svelte";
-  import Map from "./components/map.svelte";
   import Newsletter from "./components/newsletter.svelte";
   import Divider from "./components/divider.svelte";
+  import StoreLocator from "./components/storeLocator.svelte";
+  import Footer from "./components/footer.svelte";
 
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
@@ -40,10 +41,11 @@
   <Bbl componentId="bbl" />
   <Video />
   <Compare />
-  <Map />
+  <StoreLocator />
   <Testimonial />
   <Divider />
   <Newsletter />
+  <Footer />
 </main>
 
 <svelte:window bind:scrollY={y} />
@@ -74,5 +76,10 @@
     cursor: pointer;
     transform: translateY(15%);
     transition: transform 400ms ease-in-out;
+  }
+  @media (max-height: 700px) {
+    #bbl-anchor, #bbl-anchor button {
+      display: none;
+    }
   }
 </style>

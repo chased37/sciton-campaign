@@ -1,40 +1,18 @@
 <script>
   // @ts-nocheck
-  import { fade, blur, draw } from "svelte/transition";
+  import { blur } from "svelte/transition";
 
-  import { flip } from "svelte/animate";
-
-  let src = "/images/quote.png";
-  let arrow = "/images/chevron-dark.png";
+  let src = "./images/quote.png";
+  let arrow = "./images/chevron-dark.png";
 
   export let slides;
   export let speed;
-  let animate = false;
 
   const rotateCarouselLeft = (e) => {
-    const transitioningSlide = slides[slides.length - 1];
-    // document.getElementById(transitioningSlide.id).style.opacity = 0;
     slides = [slides[slides.length - 1], ...slides.slice(0, slides.length - 1)];
-    // setTimeout(
-    //   () => (document.getElementById(transitioningSlide.id).style.opacity = 1),
-    //   speed
-    // );
   };
   const rotateCarouselRight = (e) => {
-    const transitioningSlide = slides[0];
-    // document.getElementById(transitioningSlide.id).className =
-    //   "transitioning__slide";
-
     slides = [...slides.slice(1, slides.length), slides[0]];
-    // const revertOpacity = () => {
-    //   document.getElementById(transitioningSlide.id).className =
-    //     "carousel__slide";
-    //   console.log(document.getElementById(transitioningSlide.id).className);
-    // };
-    // setTimeout(function () {
-    //   revertOpacity();
-    // }, speed);
-    // console.log(document.getElementById(transitioningSlide.id).className);
   };
 </script>
 
@@ -53,6 +31,9 @@
           </div>
           <p class="carousel__slide-text">{slide.text}</p>
           <p class="carousel__slide-subtext">{slide.author}</p>
+          <p style="padding-top: 5px;" class="carousel__slide-subtext">
+            actual patient
+          </p>
         </div>
       </div>
     {/each}
@@ -146,5 +127,33 @@
   }
   .carousel__c-icon img {
     transform: rotate(180deg);
+  }
+
+  @media screen and (max-width: 1100px) {
+    .carousel__slide-text {
+      font-size: 25px;
+    }
+  }
+  @media screen and (max-width: 850px) {
+    .carousel {
+      height: 100%;
+      margin: 0;
+    }
+    .carousel__slides {
+      height: 100%;
+    }
+    .carousel__button--right {
+      right: 30px;
+      top: 87%;
+    }
+    .carousel__button--left {
+      left: 30px;
+
+      top: 87%;
+      transform: rotate(180deg);
+    }
+    .carousel__slide-text {
+      font-size: 17px;
+    }
   }
 </style>

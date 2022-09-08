@@ -3,7 +3,6 @@
 
   import { fly, fade } from "svelte/transition";
   import IntersectionObserver from "svelte-intersection-observer";
-  let src = "/images/alissa.jpg";
 
   let node;
 </script>
@@ -22,13 +21,13 @@
           transition:fly={{ y: 30, delay: 400, duration: 400 }}
           class="video__subtext"
         >
-          With BBL &reg; HERO &trade;
+          With BBL HERO
         </h4>
       {/if}
     </div>
     <div class="video__player">
       <!-- <img {src} alt="Alissa" /> -->
-      <video controls type="video/mp4" src="/images/sciton_vid_edit2.mp4">
+      <video controls type="video/mp4" src="./images/sciton_vid_edit2.mp4">
         <track
           src="captions_en.vtt"
           kind="captions"
@@ -77,5 +76,14 @@
     height: auto;
     max-height: 1000px;
     background-size: contain;
+  }
+  @media screen and (max-width: 600px) {
+    main {
+      min-height: 0;
+      height: auto;
+    }
+    .video__header {
+      font-size: 50px;
+    }
   }
 </style>

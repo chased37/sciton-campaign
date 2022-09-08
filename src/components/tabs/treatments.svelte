@@ -6,10 +6,10 @@
 
 <main>
   <div class="treatments__heading">
-    <h2 class="treatments__title">Treatable Areas</h2>
+    <h2 class="treatments__title">Treatment Areas</h2>
     <p class="treatments__desc">
-      BBL &reg; HERO &trade; can treat the face and neck for most skin types.
-      Its complimentary treatment, BBL &reg; HERO &trade;, handles all the rest.
+      BBL HERO can treat the face and neck for most skin types.
+      Its complimentary treatment, BBL HERO, handles all the rest.
     </p>
   </div>
   <ul class="treatments__list">
@@ -20,7 +20,7 @@
     <li><p>BACK</p></li>
     <li><p>ABDOMEN</p></li>
     <li><p>LEGS</p></li>
-    <li><p>BUTTOCKS</p></li>
+    <li><p>SHOULDERS</p></li>
   </ul>
   <div class="treatments__c-button">
     <button
@@ -39,9 +39,6 @@
     min-height: 800px;
     grid-template-columns: 1fr;
     padding-top: 5rem;
-  }
-  .treatments__heading {
-    padding-bottom: 3rem;
   }
   .treatments__title {
     font-family: var(--ivyMode);

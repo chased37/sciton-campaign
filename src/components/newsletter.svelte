@@ -1,8 +1,8 @@
 <script>
   let size = 50;
-  let inIcon = "images/linkedin.png";
-  let tiktokIcon = "images/tiktok.png";
-  let instaIcon = "images/insta.png";
+  let inIcon = "./images/linkedin-fixed.png";
+  let tiktokIcon = "./images/tiktok.png";
+  let instaIcon = "./images/insta.png";
 </script>
 
 <div class="newsletter">
@@ -10,10 +10,10 @@
   <div class="newsletter__socials">
     <ul class="newsletter__socials-list">
       <li class="newsletter__socials-item">
-        <a href="/"
+        <a target="_blank" href="https://www.linkedin.com/company/sciton"
           ><img
-            height={size - 5}
-            width={size - 5}
+            height={size + 7}
+            width={size + 7}
             style="margin:auto"
             src={inIcon}
             alt="LinkedIn Link"
@@ -21,7 +21,7 @@
         >
       </li>
       <li class="newsletter__socials-item">
-        <a href="/"
+        <a target="_blank" href="https://www.instagram.com/sciton_inc/"
           ><img
             height={size}
             width={size}
@@ -31,7 +31,7 @@
         >
       </li>
       <li class="newsletter__socials-item">
-        <a href="/"
+        <a target="_blank" href="https://www.tiktok.com/@sciton"
           ><img
             height={size}
             width={size}
@@ -68,7 +68,7 @@
     position: relative;
   }
   .newsletter__image {
-    background-image: url("images/alissa.jpg");
+    background-image: url("./images/alissa.jpg");
     width: 100%;
     height: auto;
     background-size: cover;
@@ -103,6 +103,13 @@
   }
   .newsletter__socials-item {
     margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .newsletter__socials-item a {
+    height: auto;
+    width: auto;
   }
   .newsletter__heading {
     font-family: var(--ivyMode);
@@ -137,5 +144,47 @@
   }
   .newsletter__button:hover {
     cursor: pointer;
+  }
+  @media screen and (max-width: 1200px) {
+    .newsletter__form {
+      border: none;
+    }
+  }
+  @media screen and (max-width: 770px) {
+    .newsletter {
+      grid-template-columns: 1fr 2fr;
+    }
+    .newsletter__form {
+      right: 10%;
+      top: 10;
+    }
+  }
+  @media screen and (max-width: 630px) {
+    .newsletter {
+      grid-template-columns: 1fr;
+      height: 600px;
+    }
+    .newsletter__image {
+      display: none;
+    }
+    .newsletter__form {
+      position: inherit;
+      order: -1;
+      width: auto;
+      margin: auto;
+      padding: 0;
+      right: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 500px;
+    }
+    .newsletter__socials {
+      width: 100%;
+      justify-content: center;
+    }
+    .newsletter__socials-list {
+      margin: 0;
+    }
   }
 </style>
