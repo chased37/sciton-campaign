@@ -108,7 +108,7 @@
     }
   }
   @media screen and (max-width: 1150px) {
-    .compare__slide:nth-child(2) {
+    .compare__slide:nth-child(3) {
       display: none;
     }
   }

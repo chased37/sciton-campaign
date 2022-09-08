@@ -104,10 +104,11 @@
   }
   @media screen and (max-width: 600px) {
     main {
-      height: 600px;
+      height: 60px;
     }
     .overview__heading {
       font-size: 50px;
+      padding: 0%;
     }
   }
 </style>

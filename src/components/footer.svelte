@@ -1,5 +1,6 @@
 <script>
-  let src = "./images/SCITON logo-01.png";
+  let src = "./images/footer-logo.png";
+  let beautyLogo = "./images/newbeautylogo.png";
 </script>
 
 <div class="footer">
@@ -14,20 +15,28 @@
     </div>
 
     <ul class="footer__list">
-      <li />
-      Sciton, Inc.
-      <li />
-      925 Commercial St., Palo Alto, CA 94303
-      <li />
-      +1.888.646.6999
-      <li />
-      <a target="_blank" href="https://sciton.com/">sciton.com</a>
+      <li>Sciton, Inc.</li>
+      <li>925 Commercial St., Palo Alto, CA 94303</li>
+      <li>+1.888.646.6999</li>
+      <li>
+        <a target="_blank" href="https://sciton.com/">sciton.com</a>
+      </li>
     </ul>
 
     <p class="footer__copyright">
       Copyright © 2022 Sciton, Inc. All Rights Reserved. Sciton, BBL and HERO
       are registered trademarks or trademarks of Sciton Inc.
     </p>
+  </div>
+
+  <div class="footer__logo">
+    <img
+      class="footer__image"
+      src={beautyLogo}
+      height="75"
+      width="75"
+      alt="Sciton"
+    />
   </div>
 </div>
 
@@ -36,6 +45,7 @@
     height: 300px;
     width: 100%;
     display: grid;
+    grid-template-columns: 2fr 1fr;
     font-family: var(--adrianna);
   }
   .footer__c {
@@ -60,5 +70,31 @@
   }
   .footer__copyright {
     font-size: 12px;
+  }
+  .footer__logo {
+    width: 40%;
+    display: flex;
+    align-items: flex-start;
+    justify-self: flex-end;
+  }
+  .footer__image {
+    margin: 35% 0 0 0;
+  }
+  @media screen and (max-width: 650px) {
+    .footer {
+      grid-template-columns: 1fr;
+      padding: 70px 0;
+    }
+    .footer__c {
+      width: 90%;
+    }
+    .footer__logo {
+     justify-content: flex-start;
+     width: 90%;
+     margin: auto;
+    }
+    .footer__image {
+    margin: 0;
+  }
   }
 </style>
