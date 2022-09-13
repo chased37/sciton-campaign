@@ -1,8 +1,49 @@
 <script>
+  // @ts-ignore
+  import axios from "axios";
   let size = 50;
   let inIcon = "./images/linkedin-fixed.png";
   let tiktokIcon = "./images/tiktok.png";
   let instaIcon = "./images/insta.png";
+
+  let name = "";
+  let email = "";
+  let mobile = "";
+
+  const formatPhoneNumber = (value) => {
+    if (!value) return value;
+    const phoneNumber = value.replace(/[^\d]/g, "");
+    const phoneNumberLength = phoneNumber.length;
+    if (phoneNumberLength < 4) return phoneNumber;
+    if (phoneNumberLength < 7) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    }
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
+      3,
+      6
+    )}-${phoneNumber.slice(6, 10)}`;
+  };
+
+  const formatMobile = () => {
+    const formattedNumberValue = formatPhoneNumber(mobile);
+
+    mobile = formattedNumberValue;
+    return mobile;
+  };
+
+  const submitForm = () => {
+    const body = {
+      formName: name,
+      formEmail: email,
+      formMobile: mobile,
+    };
+    axios
+      .post("https://hooks.zapier.com/hooks/catch/10599830/beq1jb8/", {body})
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
 </script>
 
 <div class="newsletter">
@@ -45,16 +86,31 @@
   <div class="newsletter__form">
     <h1 class="newsletter__heading">Stay in The Know</h1>
     <div>
-      <input class="newsletter__input" type="text" placeholder="Name" />
+      <input
+        bind:value={name}
+        class="newsletter__input"
+        type="text"
+        placeholder="Name"
+      />
     </div>
     <div>
-      <input class="newsletter__input" type="email" placeholder="Email" />
+      <input
+        bind:value={email}
+        class="newsletter__input"
+        type="email"
+        placeholder="Email"
+      />
     </div>
     <div>
-      <input class="newsletter__input" type="tel" placeholder="Mobile" />
+      <input
+        bind:value={mobile}
+        on:input={formatMobile}
+        class="newsletter__input"
+        placeholder="Mobile"
+      />
     </div>
     <div>
-      <button class="newsletter__button">SIGN UP</button>
+      <button on:click={submitForm} class="newsletter__button">SIGN UP</button>
     </div>
   </div>
 </div>
