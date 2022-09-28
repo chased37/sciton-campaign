@@ -1,6 +1,7 @@
 <script>
   // @ts-ignore
   import axios from "axios";
+  import { dataset_dev } from "svelte/internal";
   let size = 50;
   let inIcon = "./images/linkedin-fixed.png";
   let tiktokIcon = "./images/tiktok.png";
@@ -9,6 +10,8 @@
   let name = "";
   let email = "";
   let mobile = "";
+
+  var signedUp = false;
 
   const formatPhoneNumber = (value) => {
     if (!value) return value;
@@ -31,16 +34,34 @@
     return mobile;
   };
 
-  const submitForm = () => {
-    const body = {
-      formName: name,
-      formEmail: email,
-      formMobile: mobile,
-    };
-    axios
-      .post("https://hooks.zapier.com/hooks/catch/10599830/beq1jb8/", {body})
+  const submitForm = async () => {
+    fetch(
+      `https://api.apispreadsheets.com/data/f7FRFjoBvOq0sm9W/?query=select*fromf7FRFjoBvOq0sm9Wwhereemail='${email}'`
+    )
       .then((res) => {
-        console.log(res);
+        res.json().then((data) => {
+          if (data.data.length === 0) {
+            fetch("https://api.apispreadsheets.com/data/f7FRFjoBvOq0sm9W/", {
+              method: "POST",
+              body: JSON.stringify({
+                data: { name: name, email: email, mobile: mobile },
+              }),
+            }).then((res) => {
+              if (res.status === 201) {
+                // SUCCESS
+                name = "";
+                email = "";
+                mobile = "";
+                signedUp = true;
+              }
+            });
+          } else {
+            name = "";
+            email = "";
+            mobile = "";
+            return alert("Email has already been taken!");
+          }
+        });
       })
       .catch((err) => console.log(err));
   };
@@ -111,6 +132,9 @@
     </div>
     <div>
       <button on:click={submitForm} class="newsletter__button">SIGN UP</button>
+      {#if signedUp}
+        <p class="newsletter__desc">Thank you for signing up!</p>
+      {/if}
     </div>
   </div>
 </div>
@@ -200,6 +224,11 @@
   }
   .newsletter__button:hover {
     cursor: pointer;
+  }
+  .newsletter__desc {
+    font-family: var(--adrianna);
+    color: var(--primary);
+    margin-top: 10px;
   }
   @media screen and (max-width: 1200px) {
     .newsletter__form {

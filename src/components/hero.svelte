@@ -62,8 +62,6 @@
     </ul>
     <img
       in:fade={{ delay: 700, duration: 300 }}
-      height="100"
-      width="100"
       class="hero__logo--award"
       src={awardSrc}
       alt="BBL Hero Award Seal"
@@ -129,10 +127,18 @@
     position: absolute;
     left: 15px;
     bottom: 15px;
+    height: 100px;
+    width: 100px;
+
   }
   @media screen and (max-width: 600px) {
     .hero__text {
       font-size: 50px;
+    }
+    .hero__logo--award {
+      height: 50px;
+      width: 50px;
+      
     }
   }
 </style>
