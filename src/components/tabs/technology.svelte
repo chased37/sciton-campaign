@@ -6,39 +6,56 @@
 <main>
   <div class="technology__text">
     <h2 class="technology__heading">Technology</h2>
+    <h3 class="technology__desc technology__desc--subhead">
+      Your skin never looked <i>this</i> good.
+    </h3>
     <p class="technology__desc">
-      Practitioners all over the world describe their BBL module as the
-      workhorse in their practice. They have come to rely on optimized and
-      consistent delivery provided by the advanced technological features that
-      set it apart from the competition.<br /> <br />
+      BBL HERO’s new advanced technology forever transforms skin. The best
+      testament to a treatment’s efficacy? What you see when you look in the
+      mirror.<br /> <br />
 
-      But none of that would matter if results weren’t there to back it up. The
-      proof is in the pudding, as shown by the plethora of impressive before and
-      after images, patient accolades, and industry awards.
+      Let your skin do the talking—and flaunt impressive head-to-toe results in
+      minutes thanks to BBL HERO’s innovative technology. A fan favorite among
+      patients and practitioners—BBL HERO boasts impressive before and after
+      results, patient accolades, and industry awards. Here’s a sneak peek into
+      the groundbreaking BBL HERO technology:
       <br /> <br />
+      <strong class="technology__desc technology__desc--strong"
+        >Quick and easy full-body treatments.</strong
+      >
+      Did you know BBL HERO delivers faster, more powerful, and more comfortable
+      results than ever before? Treatments on large areas like the back, legs, and
+      arms take as little as three minutes with HERO— BBL’s High Energy Rapid Output.
+      <br /> <br />
+      <strong class="technology__desc technology__desc--strong"
+        >A comfortable, gentle experience with minimal downtime.</strong
+      >
+      Whew, breathe a sigh of relief—painful treatments are a thing of the past thanks
+      to BBL HERO’s signature handpiece that gently removes pigment and other skin
+      imperfections. The device’s ComfortCool technology keeps skin cool and comfortable
+      so numbing cream isn’t needed. After treatment, most patients will feel warm
+      for an additional 30 to 60 minutes.
+      <br /> <br />
+      <strong class="technology__desc technology__desc--strong"
+        >Treat your unique skin concerns with BBL HERO’s proprietary, multi-pass
+        approach.</strong
+      >
+      Now, it’s easy for providers to customize your treatment for powerful, long-lasting
+      results. A single pass with the BBL HERO handpiece addresses the skin&#39;s
+      overall appearance, while multiple passes using different wavelengths of light
+      provide the appearance of tighter skin and correct:
     </p>
     <ul class="technology__list">
-      <li>
-        Fast lunch time, low social downtime, procedures with ‘wow’ results
-      </li>
-      <li>
-        Comfortable treatments allow you to skip the numbing cream, with
-        integrated ComfortCool technology
-      </li>
-      <li>
-        Customized treatments that address your specific skin condition and
-        treatment goals
-      </li>
-      <li>
-        Versatility to quickly switch between treatments and areas with safe
-        protocol driven software
-      </li>
+      <li>Pigmented lesions</li>
+      <li>Skin flushing</li>
+      <li>Acne</li>
+      <li>And more!</li>
     </ul>
     <p class="technology__desc">
-      BBL HERO includes 9 wavelength filters to deliver a wide variety of
-      customizable treatment applications in one handpiece, as opposed to
-      competitor IPL devices that require a different handpiece for each
-      individual wavelength.
+      With the broadest range of wavelengths on the market—in one
+      handpiece—patients can experience exceptional results in as little as one
+      treatment. Meet your skin’s new best friend–and show off beautiful skin
+      with Sciton’s reliable and trusted BBL HERO.
     </p>
     <div class="technology__c-button">
       <button
@@ -86,6 +103,13 @@
     color: var(--bodyText);
     font-size: 15px;
     line-height: 1.5;
+  }
+  .technology__desc--subhead {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+  .technology__desc--strong {
+    font-weight: bold;
   }
   .technology__c-button {
     width: 80%;

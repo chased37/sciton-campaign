@@ -5,6 +5,7 @@
   let inIcon = "./images/linkedin.png";
   let tiktokIcon = "./images/tiktok.png";
   let instaIcon = "./images/insta.png";
+  let awardSrc = "./images/NB_AwardSeal2021.png";
 
   let size = 30;
   let animate = false;
@@ -59,6 +60,14 @@
         >
       </li>
     </ul>
+    <img
+      in:fade={{ delay: 700, duration: 300 }}
+      height="100"
+      width="100"
+      class="hero__logo--award"
+      src={awardSrc}
+      alt="BBL Hero Award Seal"
+    />
   {/if}
 </main>
 
@@ -115,6 +124,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .hero__logo--award {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
   }
   @media screen and (max-width: 600px) {
     .hero__text {

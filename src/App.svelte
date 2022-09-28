@@ -39,8 +39,8 @@
   {/if}
 
   <Bbl componentId="bbl" />
-  <Video />
   <Compare />
+  <Video />
   <StoreLocator />
   <Testimonial />
   <Divider />

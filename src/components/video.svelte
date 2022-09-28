@@ -46,6 +46,7 @@
     height: auto;
     display: grid;
     overflow: hidden;
+    padding-bottom: 50px;
     grid-template-columns: 1fr;
   }
   .video__heading {

@@ -62,14 +62,14 @@
             element: "#map",
             duration: 700,
             easing: cubicIn,
-          })}>Find My Provider</button
+          })}>Find a Provider</button
       >
     </div>
     <div class="header__hamburger">
       <a
         target="_blank"
         href="https://www.google.com/url?q=https://sciton.com/bbl-hero-by-sciton/&source=gmail-imap&ust=1661469484000000&usg=AOvVaw0-M7ILVfLaFgfVbM7C1CmY"
-        >Providers Learn More</a
+        >Visit sciton.com</a
       >
     </div>
     <div class="container nav-container">
@@ -86,12 +86,12 @@
       </div>
       <div class="menu-items">
         <li class="hamburger__link">
-          <a on:click={hamburgerScroll}>Find My Provider</a>
+          <a on:click={hamburgerScroll}>Find a Provider</a>
         </li>
         <li class="hamburger__link">
           <a
             href="https://www.google.com/url?q=https://sciton.com/bbl-hero-by-sciton/&source=gmail-imap&ust=1661469484000000&usg=AOvVaw0-M7ILVfLaFgfVbM7C1CmY"
-            >Providers Learn More</a
+            >Visit sciton.com</a
           >
         </li>
       </div>

@@ -23,7 +23,6 @@ cite,
 code,
 del,
 dfn,
-em,
 img,
 ins,
 kbd,
@@ -37,9 +36,7 @@ sub,
 sup,
 tt,
 var,
-b,
 u,
-i,
 center,
 dl,
 dt,
@@ -135,4 +132,7 @@ table {
   --tertiary: white;
   --offWhite: #fafafa;
   --bodyText: #5c5954;
+}
+* {
+  -webkit-font-smoothing: antialiased;
 }
