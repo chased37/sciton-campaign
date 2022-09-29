@@ -2,7 +2,7 @@
   import * as animateScroll from "svelte-scrollto";
   import { cubicIn, cubicInOut } from "svelte/easing";
 
-  let src = "./images/SCITON logo-01.png";
+  let src = "./assets/images/SCITON logo-01.png";
   export let duration = "300ms";
   export let offset = 0;
   export let tolerance = 0;

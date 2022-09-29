@@ -1,11 +1,11 @@
 <script>
   import { fly, fade } from "svelte/transition";
   import { onMount } from "svelte";
-  let src = "./images/bbl-hero.png";
-  let inIcon = "./images/linkedin.png";
-  let tiktokIcon = "./images/tiktok.png";
-  let instaIcon = "./images/insta.png";
-  let awardSrc = "./images/NB_AwardSeal2021.png";
+  let src = "./assets/images/bbl-hero.png";
+  let inIcon = "./assets/images/linkedin.png";
+  let tiktokIcon = "./assets/images/tiktok.png";
+  let instaIcon = "./assets/images/insta.png";
+  let awardSrc = "./assets/images/NB_AwardSeal2021.png";
 
   let size = 30;
   let animate = false;
@@ -138,7 +138,7 @@
     .hero__logo--award {
       height: 50px;
       width: 50px;
-      
+
     }
   }
 </style>

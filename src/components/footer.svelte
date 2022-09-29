@@ -1,6 +1,6 @@
 <script>
-  let src = "./images/footer-logo.png";
-  let beautyLogo = "./images/newbeautylogo.png";
+  let src = "./assets/images/footer-logo.png";
+  let beautyLogo = "./assets/images/newbeautylogo.png";
 </script>
 
 <div class="footer">

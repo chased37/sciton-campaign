@@ -1,11 +1,9 @@
 <script>
   // @ts-ignore
-  import axios from "axios";
-  import { dataset_dev } from "svelte/internal";
   let size = 50;
-  let inIcon = "./images/linkedin-fixed.png";
-  let tiktokIcon = "./images/tiktok.png";
-  let instaIcon = "./images/insta.png";
+  let inIcon = "./assets/images/linkedin-fixed.png";
+  let tiktokIcon = "./assets/images/tiktok.png";
+  let instaIcon = "./assets/images/insta.png";
 
   let name = "";
   let email = "";

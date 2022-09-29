@@ -2,8 +2,8 @@
   // @ts-nocheck
   import { blur } from "svelte/transition";
 
-  let src = "./images/quote.png";
-  let arrow = "./images/chevron-dark.png";
+  let src = "./assets/images/quote.png";
+  let arrow = "./assets/images/chevron-dark.png";
 
   export let slides;
   export let speed;
